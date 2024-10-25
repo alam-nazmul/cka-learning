@@ -14,3 +14,9 @@ requiredDuringSchedulingIgnoredDuringExecution
 requiredDuringScheduling = When the pods are scheduled, it will fulfill the conditions.
 
 IgnoredDuringExecution = Existing pods will not remove after create a label on Node. 
+
+
+```Actionscript
+preferredDuringSchedulingIgnoredDuringExecution
+```
+preferredDuringScheduling =  When the pods are scheduled, it will prefer the conditions. If it can not meet it then the Pods will deploy any nodes.

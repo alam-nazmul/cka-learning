@@ -148,6 +148,22 @@ wget https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel
 kubectl create -f kube-flannel.yml
 ```
 
+### Download the tigra operator and calico plugins.
+```Actionscript
+wget https://docs.projectcalico.org/manifests/tigera-operator.yaml
+wget https://docs.projectcalico.org/manifests/custom-resources.yaml
+```
+
+### Lights up the tigra operator
+```Actionscript
+kubectl create -f tigera-operator.yaml
+```
+
+### Update the calico custom resource file on CIDR section and lights up
+```Actionscript
+kubectl create -f calico-custom-resources.yaml
+```
+
 ### Check the all pods
 ```
 kubectl get pods -A -o wide

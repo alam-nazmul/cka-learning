@@ -1,0 +1,52 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-pod
+  labels:
+    service: web
+    affinity: pod
+spec:
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - topologyKey: kubernetes.io/hostname
+          labelSelector:
+            matchExpressions:
+              - key: affinity
+                operator: In
+                values:
+                  - pod
+  containers:
+    - name: web-container
+      image: nginx
+      imagePullPolicy: Always
+      ports:
+        - containerPort: 80
+
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: db-pod
+  labels:
+    service: db
+    affinity: pod
+spec:
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - topologyKey: kubernetes.io/hostname
+          labelSelector:
+            matchExpressions:
+              - key: affinity
+                operator: In
+                values:
+                  - pod
+  containers:
+    - name: redis-container
+      imagePullPolicy: Always
+      image: redis
+      ports:
+        - containerPort: 6379

@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: test-demonset
+  labels:
+    pod: daemonset
+spec:
+  selector:
+    matchLabels:
+      dept: EEE
+  template:
+    metadata:
+      labels:
+        dept: EEE
+    spec:
+      containers:
+        - name: daemonset-container
+          imagePullPolicy: Always
+          image: nginx
+          ports:
+            - containerPort: 80

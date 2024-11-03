@@ -184,3 +184,6 @@ spec:
     namespace: kube-system
   version: v1beta1
   versionPriority: 100
+
+
+# Ref:https://raw.githubusercontent.com/pythianarora/total-practice/master/sample-kubernetes-code/metrics-server.yaml

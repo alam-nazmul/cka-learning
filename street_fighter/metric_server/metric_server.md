@@ -31,3 +31,7 @@ kubectl top node --sort-by memory
 kubectl top pods --sort-by memory --selector dept=EEE --namespace alhua
 ```
 
+### How to check the resource utilization for all containers in a pod
+```angular2html
+kubectl top pod resource-allocation-pod --containers
+```

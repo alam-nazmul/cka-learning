@@ -1,0 +1,44 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: alhua
+
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: pods-high
+  namespace: alhua
+  labels:
+    quota: pod-limit
+spec:
+  hard:
+    cpu: "2"
+    memory: "1G"
+    pods: "5"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resource-quota-test
+  namespace: alhua
+  labels:
+    test: resource-quota
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      dept: EEE
+  template:
+    metadata:
+      labels:
+        dept: EEE
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80

@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hostpath_dep
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      dept: sre
+  template:
+    metadata:
+      labels:
+        dept: sre
+    spec:
+      volumes:
+        - name: hostpath_vol2
+          hostPath:
+            path: "/mnt/webhost"
+            type: DirectoryOrCreate
+      containers:
+        - name: nginx-container
+          imagePullPolicy: Always
+          image: nginx
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: "/usr/share/nginx/html"
+              name: hostpath_vol2
+              readOnly: true

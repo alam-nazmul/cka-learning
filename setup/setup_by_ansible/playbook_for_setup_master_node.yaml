@@ -1,0 +1,46 @@
+---
+- name: Setup the k8s master node for cluster.
+  hosts: k8s-masters
+  gather_facts: yes
+  tasks:
+
+    - name: Update the '/etc/hosts' file
+      copy:
+        src: ./data_files/hosts
+        dest: /etc/hosts
+        owner: 'root'
+        group: 'root'
+        mode: '0755'
+
+    - name: Create "/etc/apt/keyrings" directory exists
+      file:
+        path: /etc/apt/keyrings
+        state: directory
+        mode: '0755'
+
+    - name: Download Kubernetes APT key
+      get_url:
+        url: https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key
+        dest: /tmp/kubernetes-release.key
+        mode: '0644'
+
+    - name: Convert APT key to GPG format
+      command: gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg /tmp/kubernetes-release.key
+
+    - name: Clean up temporary key file
+      file:
+        path: /tmp/kubernetes-release.key
+        state: absent
+
+
+    - name: Add Kubernetes APT repository
+      ansible.builtin.copy:
+        content: "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /"
+        dest: /etc/apt/sources.list.d/kubernetes.list
+        owner: "root"
+        group: "root"
+        mode: "0644"
+
+
+
+        

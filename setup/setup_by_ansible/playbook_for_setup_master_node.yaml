@@ -1,11 +1,11 @@
 ---
 - name: Setup the k8s master node for cluster.
   hosts: k8s-masters
-  gather_facts: yes
+  gather_facts: true
   tasks:
 
     - name: Update the '/etc/hosts' file
-      copy:
+      ansible.builtin.copy:
         src: ./data_files/hosts
         dest: /etc/hosts
         owner: 'root'
@@ -42,5 +42,23 @@
         mode: "0644"
 
 
+    - name: Update the APT cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
 
-        
+    - name: Install required packages for k8s cluster.
+      ansible.builtin.apt:
+        name:
+          - kubeadm
+          - kubelet
+          - kubectl
+        state: present
+
+    - name: Disable SWAP
+      command: swapoff -a
+
+    - name: Ensure swap is disabled on boot
+      replace:
+        path: /etc/fstab
+        re

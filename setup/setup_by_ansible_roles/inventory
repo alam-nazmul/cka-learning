@@ -1,0 +1,11 @@
+[k8s_masters]
+172.16.7.91
+
+[k8s_workers]
+172.16.7.92
+172.16.7.93
+172.16.7.94
+
+[k8s_nodes:children]
+k8s_master
+k8s_workers

@@ -1,0 +1,854 @@
+2025-05-27 02:00:58,616 p=54810 u=nirr n=ansible INFO| 172.16.7.91 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2025-05-27 02:00:58,749 p=54810 u=nirr n=ansible INFO| 172.16.7.92 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2025-05-27 02:00:59,036 p=54810 u=nirr n=ansible INFO| 172.16.7.93 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2025-05-27 02:00:59,395 p=54810 u=nirr n=ansible INFO| 172.16.7.94 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2025-05-27 02:01:12,114 p=54974 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:01:12,122 p=54974 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:01:14,741 p=54974 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:01:14,750 p=54974 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:01:14,901 p=54974 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:01:14,921 p=54974 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:01:14,926 p=54974 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:01:14,983 p=54974 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-27 02:01:14,989 p=54974 u=nirr n=ansible INFO| TASK [install_container_engine : Update the current packages] ************************************************************************************
+2025-05-27 02:01:24,356 p=54974 u=nirr n=ansible INFO| changed: [172.16.7.93]
+2025-05-27 02:01:24,494 p=54974 u=nirr n=ansible INFO| changed: [172.16.7.94]
+2025-05-27 02:01:24,594 p=54974 u=nirr n=ansible INFO| changed: [172.16.7.92]
+2025-05-27 02:01:25,879 p=54974 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-27 02:01:25,884 p=54974 u=nirr n=ansible INFO| TASK [install_container_engine : Install the pre-requisites] *************************************************************************************
+2025-05-27 02:02:11,483 p=54974 u=nirr n=ansible INFO| changed: [172.16.7.92]
+2025-05-27 02:02:11,552 p=54974 u=nirr n=ansible INFO| changed: [172.16.7.94]
+2025-05-27 02:02:11,883 p=54974 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-27 02:02:14,012 p=54974 u=nirr n=ansible INFO| changed: [172.16.7.93]
+2025-05-27 02:02:14,025 p=54974 u=nirr n=ansible INFO| TASK [install_container_engine : Download docker GPG key for Ubuntu 22.04] ***********************************************************************
+2025-05-27 02:02:14,732 p=54974 u=nirr n=ansible INFO| fatal: [172.16.7.92]: FAILED! => changed=false 
+  msg: 'Unsupported parameters for (apt_key) module: dest, mode. Supported parameters include: data, file, id, keyring, keyserver, state, url, validate_certs.'
+2025-05-27 02:02:14,741 p=54974 u=nirr n=ansible INFO| fatal: [172.16.7.91]: FAILED! => changed=false 
+  msg: 'Unsupported parameters for (apt_key) module: dest, mode. Supported parameters include: data, file, id, keyring, keyserver, state, url, validate_certs.'
+2025-05-27 02:02:14,973 p=54974 u=nirr n=ansible INFO| fatal: [172.16.7.93]: FAILED! => changed=false 
+  msg: 'Unsupported parameters for (apt_key) module: dest, mode. Supported parameters include: data, file, id, keyring, keyserver, state, url, validate_certs.'
+2025-05-27 02:02:15,040 p=54974 u=nirr n=ansible INFO| fatal: [172.16.7.94]: FAILED! => changed=false 
+  msg: 'Unsupported parameters for (apt_key) module: dest, mode. Supported parameters include: data, file, id, keyring, keyserver, state, url, validate_certs.'
+2025-05-27 02:02:15,041 p=54974 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-27 02:02:15,041 p=54974 u=nirr n=ansible INFO| 172.16.7.91                : ok=4    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:02:15,041 p=54974 u=nirr n=ansible INFO| 172.16.7.92                : ok=4    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:02:15,041 p=54974 u=nirr n=ansible INFO| 172.16.7.93                : ok=4    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:02:15,041 p=54974 u=nirr n=ansible INFO| 172.16.7.94                : ok=4    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:05:25,016 p=57409 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:05:25,024 p=57409 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:05:28,269 p=57409 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:05:28,490 p=57409 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:05:28,559 p=57409 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:05:28,971 p=57409 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:05:28,977 p=57409 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:05:29,034 p=57409 u=nirr n=ansible ERROR| ERROR! couldn't resolve module/action 'get_url:'. This often indicates a misspelling, missing collection, or incorrect module path.
+
+The error appears to be in '/home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml': line 20, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Download docker GPG key as ASCII format
+  ^ here
+
+2025-05-27 02:05:48,032 p=57642 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:05:48,040 p=57642 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:05:50,051 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:05:50,070 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:05:50,274 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:05:50,313 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:05:50,318 p=57642 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:05:50,375 p=57642 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-27 02:05:50,384 p=57642 u=nirr n=ansible INFO| TASK [install_container_engine : Update the current packages] ************************************************************************************
+2025-05-27 02:05:52,089 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:05:52,096 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:05:52,164 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:05:52,191 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:05:52,197 p=57642 u=nirr n=ansible INFO| TASK [install_container_engine : Install the pre-requisites] *************************************************************************************
+2025-05-27 02:05:53,565 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:05:53,959 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:05:53,980 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:05:54,458 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:05:54,464 p=57642 u=nirr n=ansible INFO| TASK [install_container_engine : Download docker GPG key as ASCII format] ************************************************************************
+2025-05-27 02:05:55,617 p=57642 u=nirr n=ansible WARNING| [WARNING]: Module remote_tmp /root/.ansible/tmp did not exist and was created with a mode of 0700, this may cause issues when running as another
+user. To avoid this, create the remote_tmp dir with the correct permissions manually
+
+2025-05-27 02:05:55,617 p=57642 u=nirr n=ansible INFO| changed: [172.16.7.92]
+2025-05-27 02:05:55,720 p=57642 u=nirr n=ansible INFO| changed: [172.16.7.93]
+2025-05-27 02:05:55,737 p=57642 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-27 02:05:55,752 p=57642 u=nirr n=ansible INFO| changed: [172.16.7.94]
+2025-05-27 02:05:55,778 p=57642 u=nirr n=ansible INFO| TASK [install_container_engine : Convert the GPG key to Binary format] ***************************************************************************
+2025-05-27 02:05:56,490 p=57642 u=nirr n=ansible INFO| changed: [172.16.7.93]
+2025-05-27 02:05:56,509 p=57642 u=nirr n=ansible INFO| changed: [172.16.7.92]
+2025-05-27 02:05:56,529 p=57642 u=nirr n=ansible INFO| changed: [172.16.7.94]
+2025-05-27 02:05:56,540 p=57642 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-27 02:05:56,545 p=57642 u=nirr n=ansible INFO| TASK [install_container_engine : Gather OS factor] ***********************************************************************************************
+2025-05-27 02:05:58,612 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:05:58,632 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:05:58,778 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:05:58,862 p=57642 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:05:58,869 p=57642 u=nirr n=ansible INFO| TASK [install_container_engine : Create Docker APT repository file] ******************************************************************************
+2025-05-27 02:06:00,486 p=57642 u=nirr n=ansible INFO| changed: [172.16.7.94]
+2025-05-27 02:06:00,490 p=57642 u=nirr n=ansible INFO| changed: [172.16.7.93]
+2025-05-27 02:06:00,528 p=57642 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-27 02:06:00,555 p=57642 u=nirr n=ansible INFO| changed: [172.16.7.92]
+2025-05-27 02:06:00,564 p=57642 u=nirr n=ansible INFO| TASK [install_container_engine : Install Docker Engine] ******************************************************************************************
+2025-05-27 02:06:09,659 p=57642 u=nirr n=ansible INFO| fatal: [172.16.7.94]: FAILED! => changed=false 
+  msg: No package matching 'docker-ce' is available
+2025-05-27 02:06:09,735 p=57642 u=nirr n=ansible INFO| fatal: [172.16.7.91]: FAILED! => changed=false 
+  msg: No package matching 'docker-ce' is available
+2025-05-27 02:06:09,750 p=57642 u=nirr n=ansible INFO| fatal: [172.16.7.93]: FAILED! => changed=false 
+  msg: No package matching 'docker-ce' is available
+2025-05-27 02:06:09,753 p=57642 u=nirr n=ansible INFO| fatal: [172.16.7.92]: FAILED! => changed=false 
+  msg: No package matching 'docker-ce' is available
+2025-05-27 02:06:09,754 p=57642 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-27 02:06:09,754 p=57642 u=nirr n=ansible INFO| 172.16.7.91                : ok=8    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:06:09,754 p=57642 u=nirr n=ansible INFO| 172.16.7.92                : ok=8    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:06:09,754 p=57642 u=nirr n=ansible INFO| 172.16.7.93                : ok=8    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:06:09,754 p=57642 u=nirr n=ansible INFO| 172.16.7.94                : ok=8    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:07:02,286 p=58396 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:07:02,294 p=58396 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:07:03,948 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:07:04,134 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:07:04,484 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:07:04,655 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:07:04,665 p=58396 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:07:04,745 p=58396 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-27 02:07:04,753 p=58396 u=nirr n=ansible INFO| TASK [install_container_engine : Update the current packages] ************************************************************************************
+2025-05-27 02:07:06,149 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:07:06,197 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:07:06,216 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:07:06,274 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:07:06,280 p=58396 u=nirr n=ansible INFO| TASK [install_container_engine : Install the pre-requisites] *************************************************************************************
+2025-05-27 02:07:08,259 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:07:08,317 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:07:08,339 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:07:08,359 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:07:08,365 p=58396 u=nirr n=ansible INFO| TASK [install_container_engine : Download docker GPG key as ASCII format] ************************************************************************
+2025-05-27 02:07:09,721 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:07:09,737 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:07:09,746 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:07:09,758 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:07:09,766 p=58396 u=nirr n=ansible INFO| TASK [install_container_engine : Convert the GPG key to Binary format] ***************************************************************************
+2025-05-27 02:07:10,501 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:07:10,507 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:07:10,516 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:07:10,536 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:07:10,541 p=58396 u=nirr n=ansible INFO| TASK [install_container_engine : Gather OS factor] ***********************************************************************************************
+2025-05-27 02:07:11,898 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:07:11,973 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:07:12,085 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:07:12,957 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:07:12,964 p=58396 u=nirr n=ansible INFO| TASK [install_container_engine : Create Docker APT repository file] ******************************************************************************
+2025-05-27 02:07:14,544 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:07:14,550 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:07:14,556 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:07:14,576 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:07:14,583 p=58396 u=nirr n=ansible INFO| TASK [install_container_engine : Update the apt package index] ***********************************************************************************
+2025-05-27 02:07:15,526 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:07:15,562 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:07:15,760 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:07:15,766 p=58396 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:07:15,774 p=58396 u=nirr n=ansible INFO| TASK [install_container_engine : Install Docker Engine] ******************************************************************************************
+2025-05-27 02:07:20,241 p=58396 u=nirr n=ansible INFO| fatal: [172.16.7.94]: FAILED! => changed=false 
+  msg: No package matching 'docker-ce' is available
+2025-05-27 02:07:20,244 p=58396 u=nirr n=ansible INFO| fatal: [172.16.7.92]: FAILED! => changed=false 
+  msg: No package matching 'docker-ce' is available
+2025-05-27 02:07:20,288 p=58396 u=nirr n=ansible INFO| fatal: [172.16.7.91]: FAILED! => changed=false 
+  msg: No package matching 'docker-ce' is available
+2025-05-27 02:07:20,300 p=58396 u=nirr n=ansible INFO| fatal: [172.16.7.93]: FAILED! => changed=false 
+  msg: No package matching 'docker-ce' is available
+2025-05-27 02:07:20,301 p=58396 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-27 02:07:20,301 p=58396 u=nirr n=ansible INFO| 172.16.7.91                : ok=9    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:07:20,301 p=58396 u=nirr n=ansible INFO| 172.16.7.92                : ok=9    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:07:20,301 p=58396 u=nirr n=ansible INFO| 172.16.7.93                : ok=9    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:07:20,301 p=58396 u=nirr n=ansible INFO| 172.16.7.94                : ok=9    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:11:06,538 p=59959 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:11:06,545 p=59959 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:11:10,243 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:11:10,296 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:11:10,531 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:11:11,323 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:11:11,328 p=59959 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:11:11,385 p=59959 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-27 02:11:11,392 p=59959 u=nirr n=ansible INFO| TASK [install_container_engine : Update the current packages] ************************************************************************************
+2025-05-27 02:11:13,083 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:11:13,101 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:11:13,115 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:11:13,210 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:11:13,215 p=59959 u=nirr n=ansible INFO| TASK [install_container_engine : Install the pre-requisites] *************************************************************************************
+2025-05-27 02:11:15,049 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:11:15,071 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:11:15,276 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:11:15,363 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:11:15,369 p=59959 u=nirr n=ansible INFO| TASK [install_container_engine : Download docker GPG key as ASCII format] ************************************************************************
+2025-05-27 02:11:16,349 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:11:16,359 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:11:16,366 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:11:16,476 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:11:16,484 p=59959 u=nirr n=ansible INFO| TASK [install_container_engine : Convert the GPG key to Binary format] ***************************************************************************
+2025-05-27 02:11:17,208 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:11:17,221 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:11:17,223 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:11:17,234 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:11:17,239 p=59959 u=nirr n=ansible INFO| TASK [install_container_engine : Gather OS factor] ***********************************************************************************************
+2025-05-27 02:11:19,036 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:11:19,083 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:11:19,127 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:11:19,141 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:11:19,147 p=59959 u=nirr n=ansible INFO| TASK [install_container_engine : Create Docker APT repository file] ******************************************************************************
+2025-05-27 02:11:20,417 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:11:20,528 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:11:20,536 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:11:20,684 p=59959 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-27 02:11:20,694 p=59959 u=nirr n=ansible INFO| TASK [install_container_engine : Update the apt package index] ***********************************************************************************
+2025-05-27 02:11:22,054 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:11:22,236 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:11:22,242 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:11:24,296 p=59959 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:11:24,302 p=59959 u=nirr n=ansible INFO| TASK [install_container_engine : Install Docker Engine] ******************************************************************************************
+2025-05-27 02:11:28,361 p=59959 u=nirr n=ansible INFO| fatal: [172.16.7.92]: FAILED! => changed=false 
+  msg: No package matching 'docker-ce' is available
+2025-05-27 02:11:28,552 p=59959 u=nirr n=ansible INFO| fatal: [172.16.7.94]: FAILED! => changed=false 
+  msg: No package matching 'docker-ce' is available
+2025-05-27 02:11:28,559 p=59959 u=nirr n=ansible INFO| fatal: [172.16.7.91]: FAILED! => changed=false 
+  msg: No package matching 'docker-ce' is available
+2025-05-27 02:11:28,572 p=59959 u=nirr n=ansible INFO| fatal: [172.16.7.93]: FAILED! => changed=false 
+  msg: No package matching 'docker-ce' is available
+2025-05-27 02:11:28,573 p=59959 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-27 02:11:28,573 p=59959 u=nirr n=ansible INFO| 172.16.7.91                : ok=9    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:11:28,573 p=59959 u=nirr n=ansible INFO| 172.16.7.92                : ok=9    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:11:28,573 p=59959 u=nirr n=ansible INFO| 172.16.7.93                : ok=9    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:11:28,574 p=59959 u=nirr n=ansible INFO| 172.16.7.94                : ok=9    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:15:24,474 p=62939 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:15:24,482 p=62939 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:15:28,295 p=62939 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:15:28,374 p=62939 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:15:28,662 p=62939 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:15:28,710 p=62939 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:15:28,716 p=62939 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:15:28,775 p=62939 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-27 02:15:28,783 p=62939 u=nirr n=ansible INFO| TASK [install_container_engine : Update the current packages] ************************************************************************************
+2025-05-27 02:15:30,220 p=62939 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:15:30,255 p=62939 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:15:30,447 p=62939 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:15:30,648 p=62939 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:15:30,653 p=62939 u=nirr n=ansible INFO| TASK [install_container_engine : Install the pre-requisites] *************************************************************************************
+2025-05-27 02:15:32,525 p=62939 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:15:32,541 p=62939 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:15:32,557 p=62939 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:15:32,784 p=62939 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:15:32,796 p=62939 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker's official GPG key] **********************************************************************************
+2025-05-27 02:15:33,383 p=62939 u=nirr n=ansible INFO| fatal: [172.16.7.94]: FAILED! => changed=false 
+  msg: 'Unsupported parameters for (ansible.legacy.command) module: warn. Supported parameters include: _raw_params, _uses_shell, argv, chdir, creates, executable, expand_argument_vars, removes, stdin, stdin_add_newline, strip_empty_ends.'
+2025-05-27 02:15:33,419 p=62939 u=nirr n=ansible INFO| fatal: [172.16.7.92]: FAILED! => changed=false 
+  msg: 'Unsupported parameters for (ansible.legacy.command) module: warn. Supported parameters include: _raw_params, _uses_shell, argv, chdir, creates, executable, expand_argument_vars, removes, stdin, stdin_add_newline, strip_empty_ends.'
+2025-05-27 02:15:33,435 p=62939 u=nirr n=ansible INFO| fatal: [172.16.7.93]: FAILED! => changed=false 
+  msg: 'Unsupported parameters for (ansible.legacy.command) module: warn. Supported parameters include: _raw_params, _uses_shell, argv, chdir, creates, executable, expand_argument_vars, removes, stdin, stdin_add_newline, strip_empty_ends.'
+2025-05-27 02:15:33,520 p=62939 u=nirr n=ansible INFO| fatal: [172.16.7.91]: FAILED! => changed=false 
+  msg: 'Unsupported parameters for (ansible.legacy.command) module: warn. Supported parameters include: _raw_params, _uses_shell, argv, chdir, creates, executable, expand_argument_vars, removes, stdin, stdin_add_newline, strip_empty_ends.'
+2025-05-27 02:15:33,521 p=62939 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-27 02:15:33,521 p=62939 u=nirr n=ansible INFO| 172.16.7.91                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:15:33,521 p=62939 u=nirr n=ansible INFO| 172.16.7.92                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:15:33,521 p=62939 u=nirr n=ansible INFO| 172.16.7.93                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:15:33,521 p=62939 u=nirr n=ansible INFO| 172.16.7.94                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:16:38,035 p=64049 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:16:38,042 p=64049 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:16:41,391 p=64049 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:16:41,631 p=64049 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:16:41,734 p=64049 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:16:41,780 p=64049 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:16:41,793 p=64049 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:16:41,869 p=64049 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-27 02:16:41,876 p=64049 u=nirr n=ansible INFO| TASK [install_container_engine : Update the current packages] ************************************************************************************
+2025-05-27 02:16:43,567 p=64049 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:16:43,599 p=64049 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:16:43,702 p=64049 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:16:43,742 p=64049 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:16:43,747 p=64049 u=nirr n=ansible INFO| TASK [install_container_engine : Install the pre-requisites] *************************************************************************************
+2025-05-27 02:16:45,271 p=64049 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:16:45,278 p=64049 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:16:45,505 p=64049 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:16:45,826 p=64049 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:16:45,832 p=64049 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker's official GPG key] **********************************************************************************
+2025-05-27 02:16:46,516 p=64049 u=nirr n=ansible INFO| fatal: [172.16.7.91]: FAILED! => changed=false 
+  msg: 'Unsupported parameters for (ansible.legacy.command) module: warn. Supported parameters include: _raw_params, _uses_shell, argv, chdir, creates, executable, expand_argument_vars, removes, stdin, stdin_add_newline, strip_empty_ends.'
+2025-05-27 02:16:46,522 p=64049 u=nirr n=ansible INFO| fatal: [172.16.7.93]: FAILED! => changed=false 
+  msg: 'Unsupported parameters for (ansible.legacy.command) module: warn. Supported parameters include: _raw_params, _uses_shell, argv, chdir, creates, executable, expand_argument_vars, removes, stdin, stdin_add_newline, strip_empty_ends.'
+2025-05-27 02:16:46,538 p=64049 u=nirr n=ansible INFO| fatal: [172.16.7.92]: FAILED! => changed=false 
+  msg: 'Unsupported parameters for (ansible.legacy.command) module: warn. Supported parameters include: _raw_params, _uses_shell, argv, chdir, creates, executable, expand_argument_vars, removes, stdin, stdin_add_newline, strip_empty_ends.'
+2025-05-27 02:16:46,548 p=64049 u=nirr n=ansible INFO| fatal: [172.16.7.94]: FAILED! => changed=false 
+  msg: 'Unsupported parameters for (ansible.legacy.command) module: warn. Supported parameters include: _raw_params, _uses_shell, argv, chdir, creates, executable, expand_argument_vars, removes, stdin, stdin_add_newline, strip_empty_ends.'
+2025-05-27 02:16:46,549 p=64049 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-27 02:16:46,549 p=64049 u=nirr n=ansible INFO| 172.16.7.91                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:16:46,549 p=64049 u=nirr n=ansible INFO| 172.16.7.92                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:16:46,549 p=64049 u=nirr n=ansible INFO| 172.16.7.93                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:16:46,549 p=64049 u=nirr n=ansible INFO| 172.16.7.94                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:17:22,209 p=64530 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:17:22,217 p=64530 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:17:23,779 p=64530 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:17:24,544 p=64530 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:17:24,626 p=64530 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:17:24,637 p=64530 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:17:24,642 p=64530 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:17:24,701 p=64530 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-27 02:17:24,711 p=64530 u=nirr n=ansible INFO| TASK [install_container_engine : Update the current packages] ************************************************************************************
+2025-05-27 02:17:26,142 p=64530 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:17:26,142 p=64530 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:17:26,217 p=64530 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:17:26,223 p=64530 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:17:26,230 p=64530 u=nirr n=ansible INFO| TASK [install_container_engine : Install the pre-requisites] *************************************************************************************
+2025-05-27 02:17:27,461 p=64530 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:17:28,067 p=64530 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:17:28,083 p=64530 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:17:28,182 p=64530 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:17:28,188 p=64530 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker's official GPG key] **********************************************************************************
+2025-05-27 02:17:28,684 p=64530 u=nirr n=ansible WARNING| [WARNING]: As of Ansible 2.4, the parameter 'executable' is no longer supported with the 'command' module. Not using '/bin/bash'.
+
+2025-05-27 02:17:28,685 p=64530 u=nirr n=ansible INFO| fatal: [172.16.7.93]: FAILED! => changed=true 
+  cmd:
+  - curl
+  - -fsSL
+  - https://download.docker.com/linux/ubuntu/gpg
+  - '|'
+  - apt-key
+  - add
+  - '-'
+  delta: '0:00:00.033858'
+  end: '2025-05-27 02:17:28.631395'
+  msg: non-zero return code
+  rc: 2
+  start: '2025-05-27 02:17:28.597537'
+  stderr: |-
+    curl: option -: is unknown
+    curl: try 'curl --help' or 'curl --manual' for more information
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:17:28,688 p=64530 u=nirr n=ansible INFO| fatal: [172.16.7.91]: FAILED! => changed=true 
+  cmd:
+  - curl
+  - -fsSL
+  - https://download.docker.com/linux/ubuntu/gpg
+  - '|'
+  - apt-key
+  - add
+  - '-'
+  delta: '0:00:00.033501'
+  end: '2025-05-27 02:17:28.631154'
+  msg: non-zero return code
+  rc: 2
+  start: '2025-05-27 02:17:28.597653'
+  stderr: |-
+    curl: option -: is unknown
+    curl: try 'curl --help' or 'curl --manual' for more information
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:17:28,710 p=64530 u=nirr n=ansible INFO| fatal: [172.16.7.94]: FAILED! => changed=true 
+  cmd:
+  - curl
+  - -fsSL
+  - https://download.docker.com/linux/ubuntu/gpg
+  - '|'
+  - apt-key
+  - add
+  - '-'
+  delta: '0:00:00.042190'
+  end: '2025-05-27 02:17:28.649643'
+  msg: non-zero return code
+  rc: 2
+  start: '2025-05-27 02:17:28.607453'
+  stderr: |-
+    curl: option -: is unknown
+    curl: try 'curl --help' or 'curl --manual' for more information
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:17:28,887 p=64530 u=nirr n=ansible INFO| fatal: [172.16.7.92]: FAILED! => changed=true 
+  cmd:
+  - curl
+  - -fsSL
+  - https://download.docker.com/linux/ubuntu/gpg
+  - '|'
+  - apt-key
+  - add
+  - '-'
+  delta: '0:00:00.025520'
+  end: '2025-05-27 02:17:28.841179'
+  msg: non-zero return code
+  rc: 2
+  start: '2025-05-27 02:17:28.815659'
+  stderr: |-
+    curl: option -: is unknown
+    curl: try 'curl --help' or 'curl --manual' for more information
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:17:28,888 p=64530 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-27 02:17:28,888 p=64530 u=nirr n=ansible INFO| 172.16.7.91                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:17:28,888 p=64530 u=nirr n=ansible INFO| 172.16.7.92                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:17:28,888 p=64530 u=nirr n=ansible INFO| 172.16.7.93                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:17:28,888 p=64530 u=nirr n=ansible INFO| 172.16.7.94                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:19:09,109 p=66064 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:19:09,117 p=66064 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:19:12,736 p=66064 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:19:12,871 p=66064 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:19:12,973 p=66064 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:19:13,176 p=66064 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:19:13,181 p=66064 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:19:13,239 p=66064 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-27 02:19:13,246 p=66064 u=nirr n=ansible INFO| TASK [install_container_engine : Update the current packages] ************************************************************************************
+2025-05-27 02:19:14,615 p=66064 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:19:14,621 p=66064 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:19:14,706 p=66064 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:19:15,087 p=66064 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:19:15,092 p=66064 u=nirr n=ansible INFO| TASK [install_container_engine : Install the pre-requisites] *************************************************************************************
+2025-05-27 02:19:16,861 p=66064 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:19:16,993 p=66064 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:19:17,133 p=66064 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:19:17,207 p=66064 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:19:17,212 p=66064 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker's official GPG key] **********************************************************************************
+2025-05-27 02:19:17,717 p=66064 u=nirr n=ansible WARNING| [WARNING]: As of Ansible 2.4, the parameter 'executable' is no longer supported with the 'command' module. Not using '/bin/bash'.
+
+2025-05-27 02:19:17,718 p=66064 u=nirr n=ansible INFO| fatal: [172.16.7.91]: FAILED! => changed=false 
+  cmd: '''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  msg: '[Errno 2] No such file or directory: b''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  rc: 2
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:19:17,748 p=66064 u=nirr n=ansible INFO| fatal: [172.16.7.93]: FAILED! => changed=false 
+  cmd: '''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  msg: '[Errno 2] No such file or directory: b''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  rc: 2
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:19:17,791 p=66064 u=nirr n=ansible INFO| fatal: [172.16.7.94]: FAILED! => changed=false 
+  cmd: '''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  msg: '[Errno 2] No such file or directory: b''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  rc: 2
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:19:17,889 p=66064 u=nirr n=ansible INFO| fatal: [172.16.7.92]: FAILED! => changed=false 
+  cmd: '''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  msg: '[Errno 2] No such file or directory: b''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  rc: 2
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:19:17,891 p=66064 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-27 02:19:17,891 p=66064 u=nirr n=ansible INFO| 172.16.7.91                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:19:17,891 p=66064 u=nirr n=ansible INFO| 172.16.7.92                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:19:17,891 p=66064 u=nirr n=ansible INFO| 172.16.7.93                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:19:17,891 p=66064 u=nirr n=ansible INFO| 172.16.7.94                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:19:50,925 p=66463 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:19:50,932 p=66463 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:19:53,124 p=66463 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:19:53,230 p=66463 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:19:53,246 p=66463 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:19:53,338 p=66463 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:19:53,344 p=66463 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:19:53,402 p=66463 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-27 02:19:53,409 p=66463 u=nirr n=ansible INFO| TASK [install_container_engine : Update the current packages] ************************************************************************************
+2025-05-27 02:19:54,965 p=66463 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:19:55,017 p=66463 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:19:55,056 p=66463 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:19:55,279 p=66463 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:19:55,284 p=66463 u=nirr n=ansible INFO| TASK [install_container_engine : Install the pre-requisites] *************************************************************************************
+2025-05-27 02:19:56,953 p=66463 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:19:57,008 p=66463 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:19:57,086 p=66463 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:19:57,326 p=66463 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:19:57,332 p=66463 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker's official GPG key] **********************************************************************************
+2025-05-27 02:19:58,002 p=66463 u=nirr n=ansible INFO| fatal: [172.16.7.94]: FAILED! => changed=false 
+  cmd: '''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  msg: '[Errno 2] No such file or directory: b''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  rc: 2
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:19:58,009 p=66463 u=nirr n=ansible INFO| fatal: [172.16.7.93]: FAILED! => changed=false 
+  cmd: '''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  msg: '[Errno 2] No such file or directory: b''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  rc: 2
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:19:58,019 p=66463 u=nirr n=ansible INFO| fatal: [172.16.7.91]: FAILED! => changed=false 
+  cmd: '''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  msg: '[Errno 2] No such file or directory: b''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  rc: 2
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:19:58,023 p=66463 u=nirr n=ansible INFO| fatal: [172.16.7.92]: FAILED! => changed=false 
+  cmd: '''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  msg: '[Errno 2] No such file or directory: b''curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg'''
+  rc: 2
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:19:58,024 p=66463 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-27 02:19:58,025 p=66463 u=nirr n=ansible INFO| 172.16.7.91                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:19:58,025 p=66463 u=nirr n=ansible INFO| 172.16.7.92                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:19:58,025 p=66463 u=nirr n=ansible INFO| 172.16.7.93                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:19:58,025 p=66463 u=nirr n=ansible INFO| 172.16.7.94                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:20:40,484 p=67223 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:20:40,492 p=67223 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:20:42,638 p=67223 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:20:42,738 p=67223 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:20:42,781 p=67223 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:20:42,790 p=67223 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:20:42,795 p=67223 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:20:42,851 p=67223 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-27 02:20:42,857 p=67223 u=nirr n=ansible INFO| TASK [install_container_engine : Update the current packages] ************************************************************************************
+2025-05-27 02:20:44,498 p=67223 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:20:44,556 p=67223 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:20:44,613 p=67223 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:20:44,686 p=67223 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:20:44,692 p=67223 u=nirr n=ansible INFO| TASK [install_container_engine : Install the pre-requisites] *************************************************************************************
+2025-05-27 02:20:46,616 p=67223 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:20:46,623 p=67223 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:20:46,653 p=67223 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:20:46,740 p=67223 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:20:46,746 p=67223 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker's official GPG key] **********************************************************************************
+2025-05-27 02:20:47,312 p=67223 u=nirr n=ansible INFO| fatal: [172.16.7.91]: FAILED! => changed=true 
+  cmd:
+  - curl
+  - -fsSL
+  - https://download.docker.com/linux/ubuntu/gpg
+  - '|'
+  - sudo
+  - gpg
+  - --dearmor
+  - -o
+  - /usr/share/keyrings/docker-archive-keyring.gpg
+  delta: '0:00:00.025101'
+  end: '2025-05-27 02:20:47.272066'
+  msg: non-zero return code
+  rc: 2
+  start: '2025-05-27 02:20:47.246965'
+  stderr: |-
+    curl: option --dearmor: is unknown
+    curl: try 'curl --help' or 'curl --manual' for more information
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:20:47,350 p=67223 u=nirr n=ansible INFO| fatal: [172.16.7.92]: FAILED! => changed=true 
+  cmd:
+  - curl
+  - -fsSL
+  - https://download.docker.com/linux/ubuntu/gpg
+  - '|'
+  - sudo
+  - gpg
+  - --dearmor
+  - -o
+  - /usr/share/keyrings/docker-archive-keyring.gpg
+  delta: '0:00:00.034380'
+  end: '2025-05-27 02:20:47.301011'
+  msg: non-zero return code
+  rc: 2
+  start: '2025-05-27 02:20:47.266631'
+  stderr: |-
+    curl: option --dearmor: is unknown
+    curl: try 'curl --help' or 'curl --manual' for more information
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:20:47,361 p=67223 u=nirr n=ansible INFO| fatal: [172.16.7.93]: FAILED! => changed=true 
+  cmd:
+  - curl
+  - -fsSL
+  - https://download.docker.com/linux/ubuntu/gpg
+  - '|'
+  - sudo
+  - gpg
+  - --dearmor
+  - -o
+  - /usr/share/keyrings/docker-archive-keyring.gpg
+  delta: '0:00:00.030498'
+  end: '2025-05-27 02:20:47.319226'
+  msg: non-zero return code
+  rc: 2
+  start: '2025-05-27 02:20:47.288728'
+  stderr: |-
+    curl: option --dearmor: is unknown
+    curl: try 'curl --help' or 'curl --manual' for more information
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:20:47,403 p=67223 u=nirr n=ansible INFO| fatal: [172.16.7.94]: FAILED! => changed=true 
+  cmd:
+  - curl
+  - -fsSL
+  - https://download.docker.com/linux/ubuntu/gpg
+  - '|'
+  - sudo
+  - gpg
+  - --dearmor
+  - -o
+  - /usr/share/keyrings/docker-archive-keyring.gpg
+  delta: '0:00:00.030336'
+  end: '2025-05-27 02:20:47.351888'
+  msg: non-zero return code
+  rc: 2
+  start: '2025-05-27 02:20:47.321552'
+  stderr: |-
+    curl: option --dearmor: is unknown
+    curl: try 'curl --help' or 'curl --manual' for more information
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2025-05-27 02:20:47,404 p=67223 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-27 02:20:47,404 p=67223 u=nirr n=ansible INFO| 172.16.7.91                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:20:47,404 p=67223 u=nirr n=ansible INFO| 172.16.7.92                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:20:47,404 p=67223 u=nirr n=ansible INFO| 172.16.7.93                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:20:47,404 p=67223 u=nirr n=ansible INFO| 172.16.7.94                : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:27:17,984 p=71793 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:27:17,991 p=71793 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:27:21,626 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:27:21,641 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:27:21,850 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:27:21,922 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:27:21,927 p=71793 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:27:21,985 p=71793 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-27 02:27:21,992 p=71793 u=nirr n=ansible INFO| TASK [install_container_engine : Update the current packages] ************************************************************************************
+2025-05-27 02:27:23,494 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:27:23,606 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:27:23,771 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:27:25,869 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:27:25,874 p=71793 u=nirr n=ansible INFO| TASK [install_container_engine : Install the pre-requisites] *************************************************************************************
+2025-05-27 02:27:27,447 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:27:27,498 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:27:27,498 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:27:27,656 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:27:27,662 p=71793 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker's official GPG key] **********************************************************************************
+2025-05-27 02:27:29,024 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:27:29,025 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:27:29,031 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:27:29,063 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:27:29,071 p=71793 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker APT repository] **************************************************************************************
+2025-05-27 02:27:30,267 p=71793 u=nirr n=ansible INFO| changed: [172.16.7.93]
+2025-05-27 02:27:30,272 p=71793 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-27 02:27:30,531 p=71793 u=nirr n=ansible INFO| changed: [172.16.7.94]
+2025-05-27 02:27:30,539 p=71793 u=nirr n=ansible INFO| changed: [172.16.7.92]
+2025-05-27 02:27:30,544 p=71793 u=nirr n=ansible INFO| TASK [install_container_engine : Update the apt package index] ***********************************************************************************
+2025-05-27 02:27:33,336 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:27:33,795 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:27:34,105 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:27:34,327 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:27:34,333 p=71793 u=nirr n=ansible INFO| TASK [install_container_engine : Install Docker Engine] ******************************************************************************************
+2025-05-27 02:28:24,560 p=71793 u=nirr n=ansible INFO| changed: [172.16.7.92]
+2025-05-27 02:28:34,534 p=71793 u=nirr n=ansible INFO| changed: [172.16.7.94]
+2025-05-27 02:28:35,721 p=71793 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-27 02:28:36,043 p=71793 u=nirr n=ansible INFO| changed: [172.16.7.93]
+2025-05-27 02:28:36,083 p=71793 u=nirr n=ansible INFO| RUNNING HANDLER [install_container_engine : Enable and Start the docker service] *****************************************************************
+2025-05-27 02:28:36,972 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:28:36,972 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:28:37,170 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:28:37,172 p=71793 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:28:37,173 p=71793 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-27 02:28:37,173 p=71793 u=nirr n=ansible INFO| 172.16.7.91                : ok=9    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:28:37,173 p=71793 u=nirr n=ansible INFO| 172.16.7.92                : ok=9    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:28:37,173 p=71793 u=nirr n=ansible INFO| 172.16.7.93                : ok=9    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:28:37,174 p=71793 u=nirr n=ansible INFO| 172.16.7.94                : ok=9    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:30:25,474 p=74034 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:30:25,482 p=74034 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:30:28,991 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:30:29,165 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:30:29,347 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:30:29,791 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:30:29,796 p=74034 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:30:29,856 p=74034 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-27 02:30:29,861 p=74034 u=nirr n=ansible INFO| TASK [install_container_engine : Update the current packages] ************************************************************************************
+2025-05-27 02:30:31,432 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:30:31,451 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:30:31,525 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:30:31,641 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:30:31,647 p=74034 u=nirr n=ansible INFO| TASK [install_container_engine : Install the pre-requisites] *************************************************************************************
+2025-05-27 02:30:33,433 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:30:33,530 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:30:33,547 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:30:33,629 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:30:33,636 p=74034 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker's official GPG key] **********************************************************************************
+2025-05-27 02:30:35,004 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:30:35,016 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:30:35,025 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:30:35,033 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:30:35,040 p=74034 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker APT repository] **************************************************************************************
+2025-05-27 02:30:35,744 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:30:35,753 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:30:35,774 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:30:35,997 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:30:36,003 p=74034 u=nirr n=ansible INFO| TASK [install_container_engine : Install Docker Engine] ******************************************************************************************
+2025-05-27 02:30:41,122 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:30:41,167 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:30:41,178 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:30:41,380 p=74034 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:30:41,400 p=74034 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-27 02:30:41,400 p=74034 u=nirr n=ansible INFO| 172.16.7.91                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:30:41,400 p=74034 u=nirr n=ansible INFO| 172.16.7.92                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:30:41,400 p=74034 u=nirr n=ansible INFO| 172.16.7.93                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:30:41,400 p=74034 u=nirr n=ansible INFO| 172.16.7.94                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:31:33,817 p=74540 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:31:33,825 p=74540 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:31:36,169 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:31:36,753 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:31:36,764 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:31:36,801 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:31:36,806 p=74540 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:31:36,872 p=74540 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-27 02:31:36,877 p=74540 u=nirr n=ansible INFO| TASK [install_container_engine : Update the current packages] ************************************************************************************
+2025-05-27 02:31:38,621 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:31:38,633 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:31:38,637 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:31:40,891 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:31:40,897 p=74540 u=nirr n=ansible INFO| TASK [install_container_engine : Install the pre-requisites] *************************************************************************************
+2025-05-27 02:31:42,453 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:31:42,541 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:31:42,593 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:31:42,604 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:31:42,610 p=74540 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker's official GPG key] **********************************************************************************
+2025-05-27 02:31:43,895 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:31:43,896 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:31:43,941 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:31:44,006 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:31:44,011 p=74540 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker APT repository] **************************************************************************************
+2025-05-27 02:31:45,080 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:31:45,428 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:31:45,476 p=74540 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-27 02:31:45,476 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:31:45,482 p=74540 u=nirr n=ansible INFO| TASK [install_container_engine : Install Docker Engine] ******************************************************************************************
+2025-05-27 02:31:49,252 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:31:49,519 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:31:50,458 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:31:52,576 p=74540 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:31:52,605 p=74540 u=nirr n=ansible INFO| RUNNING HANDLER [install_container_engine : Update apt cache] ************************************************************************************
+2025-05-27 02:31:56,591 p=74540 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-27 02:31:56,592 p=74540 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-27 02:31:56,593 p=74540 u=nirr n=ansible INFO| 172.16.7.91                : ok=8    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:31:56,593 p=74540 u=nirr n=ansible INFO| 172.16.7.92                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:31:56,593 p=74540 u=nirr n=ansible INFO| 172.16.7.93                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:31:56,593 p=74540 u=nirr n=ansible INFO| 172.16.7.94                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:33:17,376 p=75884 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:33:17,384 p=75884 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:33:20,445 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:33:20,804 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:33:20,814 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:33:20,982 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:33:20,988 p=75884 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:33:21,048 p=75884 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-27 02:33:21,054 p=75884 u=nirr n=ansible INFO| TASK [install_container_engine : Update the current packages] ************************************************************************************
+2025-05-27 02:33:22,531 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:33:22,543 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:33:22,620 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:33:25,097 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:33:25,103 p=75884 u=nirr n=ansible INFO| TASK [install_container_engine : Install the pre-requisites] *************************************************************************************
+2025-05-27 02:33:26,654 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:33:26,985 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:33:26,988 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:33:27,094 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:33:27,101 p=75884 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker's official GPG key] **********************************************************************************
+2025-05-27 02:33:28,383 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:33:28,393 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:33:28,403 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:33:28,429 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:33:28,434 p=75884 u=nirr n=ansible INFO| TASK [install_container_engine : Flush handlers] *************************************************************************************************
+2025-05-27 02:33:28,444 p=75884 u=nirr n=ansible INFO| TASK [install_container_engine : Flush handlers] *************************************************************************************************
+2025-05-27 02:33:28,455 p=75884 u=nirr n=ansible INFO| TASK [install_container_engine : Flush handlers] *************************************************************************************************
+2025-05-27 02:33:28,466 p=75884 u=nirr n=ansible INFO| TASK [install_container_engine : Flush handlers] *************************************************************************************************
+2025-05-27 02:33:28,477 p=75884 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker APT repository] **************************************************************************************
+2025-05-27 02:33:29,938 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:33:29,975 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:33:29,977 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:33:30,021 p=75884 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-27 02:33:30,027 p=75884 u=nirr n=ansible INFO| TASK [install_container_engine : Install Docker Engine] ******************************************************************************************
+2025-05-27 02:33:33,414 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:33:34,599 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:33:34,901 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:33:37,156 p=75884 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:33:37,189 p=75884 u=nirr n=ansible INFO| RUNNING HANDLER [install_container_engine : Update apt cache] ************************************************************************************
+2025-05-27 02:33:41,751 p=75884 u=nirr n=ansible ERROR|  [ERROR]: User interrupted execution
+
+2025-05-27 02:34:03,186 p=76636 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-27 02:34:03,194 p=76636 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-27 02:34:05,472 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:34:05,511 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:34:05,557 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:34:05,705 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:34:05,711 p=76636 u=nirr n=ansible INFO| TASK [install_container_engine : Playbook for installing Docker Engine] **************************************************************************
+2025-05-27 02:34:05,780 p=76636 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/install_container_engine/tasks/playbook_for_install_docker.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-27 02:34:05,786 p=76636 u=nirr n=ansible INFO| TASK [install_container_engine : Update the current packages] ************************************************************************************
+2025-05-27 02:34:07,113 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:34:07,129 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:34:07,358 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:34:07,366 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:34:07,371 p=76636 u=nirr n=ansible INFO| TASK [install_container_engine : Install the pre-requisites] *************************************************************************************
+2025-05-27 02:34:09,006 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:34:09,179 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:34:09,190 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:34:09,474 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:34:09,481 p=76636 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker's official GPG key] **********************************************************************************
+2025-05-27 02:34:11,028 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:34:11,046 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:34:11,048 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:34:11,066 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:34:11,072 p=76636 u=nirr n=ansible INFO| TASK [install_container_engine : Add Docker APT repository] **************************************************************************************
+2025-05-27 02:34:11,980 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:34:12,050 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:34:12,490 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:34:12,554 p=76636 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-27 02:34:12,559 p=76636 u=nirr n=ansible INFO| TASK [install_container_engine : Flush handlers] *************************************************************************************************
+2025-05-27 02:34:12,571 p=76636 u=nirr n=ansible INFO| TASK [install_container_engine : Flush handlers] *************************************************************************************************
+2025-05-27 02:34:12,580 p=76636 u=nirr n=ansible INFO| TASK [install_container_engine : Flush handlers] *************************************************************************************************
+2025-05-27 02:34:12,589 p=76636 u=nirr n=ansible INFO| TASK [install_container_engine : Flush handlers] *************************************************************************************************
+2025-05-27 02:34:12,601 p=76636 u=nirr n=ansible INFO| RUNNING HANDLER [install_container_engine : Update apt cache] ************************************************************************************
+2025-05-27 02:34:19,392 p=76636 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-27 02:34:19,398 p=76636 u=nirr n=ansible INFO| TASK [install_container_engine : Install Docker Engine] ******************************************************************************************
+2025-05-27 02:34:23,927 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-27 02:34:24,502 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-27 02:34:24,507 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-27 02:34:24,507 p=76636 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-27 02:34:24,528 p=76636 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-27 02:34:24,528 p=76636 u=nirr n=ansible INFO| 172.16.7.91                : ok=8    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:34:24,528 p=76636 u=nirr n=ansible INFO| 172.16.7.92                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:34:24,528 p=76636 u=nirr n=ansible INFO| 172.16.7.93                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:34:24,528 p=76636 u=nirr n=ansible INFO| 172.16.7.94                : ok=7    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-27 02:47:53,646 p=82705 u=nirr n=ansible INFO| - Role configuration_for_kubernetes_environment was created successfully

@@ -1,0 +1,12 @@
+#SPDX-License-Identifier: MIT-0
+---
+# handlers file for install_container_engine
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Enable and Start the docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes

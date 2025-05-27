@@ -1,0 +1,18 @@
+#SPDX-License-Identifier: MIT-0
+---
+# handlers file for configuration_for_kubernetes_environment
+- name: Restart cloud-init service
+  service:
+    name: cloud-init
+    state: restarted
+
+- name: Update apt cache
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Load the required modules
+  command: modprobe {{ item }}
+  loop:
+    - br_netfilter
+    - overlay

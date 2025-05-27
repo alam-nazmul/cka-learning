@@ -1,0 +1,58 @@
+---
+- name: Update the current packages
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Install the pre-requisites
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - vim
+      - git
+      - python3-pip
+      - tmux
+    state: present
+
+
+- name: Add Docker's official GPG key
+  copy:
+    src: ./files/docker-archive-keyring.gpg
+    dest: /usr/share/keyrings/docker-archive-keyring.gpg
+    mode: '0644'
+    owner: root
+    group: root
+  when:
+    - ansible_distribution == "Ubuntu"
+    - ansible_distribution_version is version('20.04', '>=')
+    - ansible_distribution_version is version('22.04', '<=')
+
+
+- name: Add Docker APT repository
+  copy:
+    src: ./files/docker.list
+    dest: /etc/apt/sources.list.d/docker.list
+    owner: root
+    group: root
+    mode: '0644'
+  when:
+    - ansible_distribution == "Ubuntu"
+    - ansible_distribution_version is version('20.04', '>=')
+    - ansible_distribution_version is version('22.04', '<=')
+  notify:
+    - Update apt cache
+
+- name: Immediately update apt cache if repo changed
+  meta: flush_handlers
+
+
+- name: Install Docker Engine
+  apt:
+    name: docker-ce
+    state: present
+    update_cache: yes
+  notify:
+    - Enable and Start the docker service

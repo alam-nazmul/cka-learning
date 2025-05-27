@@ -1,0 +1,72 @@
+
+- name: Add the GPG key for the Kubernetes repository
+  copy:
+    src: ./files/kubernetes-archive-keyring.gpg
+    dest: /etc/apt/keyrings/kubernetes-archive-keyring.gpg
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Add the Kubernetes APT repository
+  copy:
+    src: ./files/kubernetes.list
+    dest: /etc/apt/sources.list.d/kubernetes.list
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - Update apt cache
+
+- name: Immediately update apt cache if repo changed
+  meta: flush_handlers
+
+- name: Install Kubernetes components for master nodes
+  apt:
+    name:
+      - kubelet
+      - kubeadm
+      - kubectl
+    state: present
+    update_cache: yes
+  when:
+    - ansible_distribution == "Ubuntu"
+    - ansible_distribution_version is version('20.04', '>=')
+    - ansible_distribution_version is version('22.04', '<=')
+    - "'k8s_masters' in group_names"
+
+- name: Install Kubernetes components for worker nodes
+  apt:
+    name:
+      - kubelet
+      - kubeadm
+    state: present
+    update_cache: yes
+  when:
+    - ansible_distribution == "Ubuntu"
+    - ansible_distribution_version is version('20.04', '>=')
+    - ansible_distribution_version is version('22.04', '<=')
+    - "'k8s_workers' in group_names"
+
+- name: Disable the swap memory
+  command: swapoff -a
+
+- name: Load the required modules
+  blockinfile:
+    path: /etc/modules-load.d/k8s.conf
+    block: |
+      # Kubernetes modules
+      br_netfilter
+      overlay
+    marker: "# {mark} ANSIBLE MANAGED BLOCK"
+    backup: yes
+    append_newline: yes
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - Load the required modules
+
+- name: Immediately load the required modules if changed
+  meta: flush_handlers
+
+- name: 

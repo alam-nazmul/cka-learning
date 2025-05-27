@@ -20,8 +20,10 @@
 
 - name: Reload the ip forwarding settings
   sysctl:
+    name: net.ipv4.ip_forward
+    value: 1
+    state: present
     reload: yes
-    # sysctl_file: /etc/sysctl.d/10-k8s.conf
 
 - name: Reload the daemons
   systemd:

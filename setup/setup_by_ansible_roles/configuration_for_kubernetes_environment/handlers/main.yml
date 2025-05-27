@@ -34,3 +34,13 @@
     name: containerd
     state: restarted
     enabled: yes
+
+- name: Source bashrc file for kubectl
+  shell: source /etc/bash.bashrc
+  args:
+    executable: /bin/bash
+
+- name: Source kubectl completion script
+  shell: source /etc/bash_completion.d/kubectl
+  args:
+    executable: /bin/bash

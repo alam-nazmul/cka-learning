@@ -1,0 +1,102 @@
+# - name: Initialize Kubernetes cluster
+#   command: kubeadm init --pod-network-cidr=10.244.0.0/16
+#   when: "'k8s_masters' in group_names"
+
+# - name: Set up kubeconfig for the root user
+#   command: |
+#     mkdir -p $HOME/.kube
+#     cp /etc/kubernetes/admin.conf $HOME/.kube/config
+#     chown $(id -u):$(id -g) $HOME/.kube/config
+#   when: "'k8s_masters' in group_names"
+
+# - name: Install Flannel CNI
+#   command: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel.yml
+#   when: "'k8s_masters' in group_names"
+
+# - name: Join worker nodes to the cluster
+#   command: kubeadm join {{ hostvars[groups['k8s_masters'][0]].ansible_host }}:6443 --token {{ hostvars[groups['k8s_masters'][0]].kubeadm_token }} --discovery-token-ca-cert-hash sha256:{{ hostvars[groups['k8s_masters'][0]].kubeadm_ca_cert_hash }}
+#   when: "'k8s_workers' in group_names"
+
+- name: Check if kubeadm has already been initialized
+  stat:
+    path: /etc/kubernetes/admin.conf
+  register: kubeadm_init_status
+  ignore_errors: yes
+  changed_when: false
+  when: "'k8s_masters' in group_names"
+
+- name: Run kubeadm init with pod network CIDR
+  command: > 
+    kubeadm init --pod-network-cidr={{ pod_network_cidr }}
+  ignore_errors: yes
+  register: kubeadm_init_result
+  changed_when: kubeadm_init_result is changed
+  when: 
+    - "'k8s_masters' in group_names"
+    - not kubeadm_init_status.stat.exists
+
+- name: Update the bashrc file for to connect the cluster by kubectl commands
+  lineinfile:
+    path: /etc/bash.bashrc
+    line: 'export KUBECONFIG=/etc/kubernetes/admin.conf'
+    create: yes
+  when: "'k8s_masters' in group_names"
+
+- name: Get kubectl bash completion script
+  raw:
+    kubectl completion bash
+  register: kubectl_completion
+  when:
+    - ansible_distribution == "Ubuntu"
+    - ansible_distribution_version is version('20.04', '>=')
+    - ansible_distribution_version is version('22.04', '<=')
+    - "'k8s_masters' in group_names"
+
+- name: Preserve the kubectl completion script to system file
+  copy:
+    content: "{{ kubectl_completion.stdout }}"
+    dest: /etc/bash_completion.d/kubectl
+    owner: root
+    group: root
+    mode: '0644'
+  when:
+    - ansible_distribution == "Ubuntu"
+    - ansible_distribution_version is version('20.04', '>=')
+    - ansible_distribution_version is version('22.04', '<=')
+    - "'k8s_masters' in group_names"
+
+- name: Download the network plugins manifest
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: root
+    group: root
+    mode: '0644'
+    creates: "{{ item.dest }}"
+  with_items:
+    - src: ../files/setup_flannel.yaml
+      dest: /tmp/setup_flannel.yaml
+    - src: ../files/tigera-operator.yaml
+      dest: /tmp/tigera-operator.yaml
+    - src: ../files/calico-custom-resources.yaml
+      dest: /tmp/calico-custom-resources.yaml
+    - src: ../files/setup_metrics_server.yaml
+      dest: /tmp/setup_metrics_server.yaml
+  when:
+    - "'k8s_masters' in group_names"
+    - ansible_distribution == "Ubuntu"
+
+- name: Apply the network plugins manifest
+  kubernetes.core.k8s:
+    src: "{{ item }}"
+    state: present
+  loop:
+    - /tmp/setup_flannel.yaml
+    - /tmp/tigera-operator.yaml
+    - /tmp/calico-custom-resources.yaml
+    - /tmp/setup_metrics_server.yaml
+  when:
+    - ansible_distribution == "Ubuntu"
+    - ansible_distribution_version is version('20.04', '>=')
+    - ansible_distribution_version is version('22.04', '<=')
+    - "'k8s_masters' in group_names"

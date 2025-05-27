@@ -1,8 +1,8 @@
 
 - name: Add the GPG key for the Kubernetes repository
   copy:
-    src: ./files/kubernetes-archive-keyring.gpg
-    dest: /etc/apt/keyrings/kubernetes-archive-keyring.gpg
+    src: ./files/kubernetes-apt-keyring.gpg
+    dest: /etc/apt/keyrings/kubernetes-apt-keyring.gpg
     owner: root
     group: root
     mode: '0644'
@@ -50,6 +50,16 @@
 - name: Disable the swap memory
   command: swapoff -a
 
+- name: Create required modules file
+  file:
+    path: /etc/modules-load.d/k8s.conf
+    state: touch
+    owner: root
+    group: root
+    mode: '0644'
+    modification_time: preserve
+    access_time: preserve
+
 - name: Load the required modules
   blockinfile:
     path: /etc/modules-load.d/k8s.conf
@@ -59,7 +69,7 @@
       overlay
     marker: "# {mark} ANSIBLE MANAGED BLOCK"
     backup: yes
-    append_newline: yes
+    # append_newline: yes
     owner: root
     group: root
     mode: '0644'
@@ -69,4 +79,68 @@
 - name: Immediately load the required modules if changed
   meta: flush_handlers
 
-- name: 
+- name: Create the IP forwarding configuration file
+  file:
+    path: /etc/sysctl.d/10-k8s.conf
+    state: touch
+    owner: root
+    group: root
+    mode: '0644'
+    modification_time: preserve
+    access_time: preserve
+
+- name: Enable the IP forwording
+  blockinfile:
+    path: /etc/sysctl.d/10-k8s.conf
+    block: |
+      # Kubernetes sysctl settings
+      net.bridge.bridge-nf-call-ip6tables = 1
+      net.bridge.bridge-nf-call-iptables = 1
+      net.bridge.bridge-nf-call-arptables = 1
+      net.ipv4.ip_forward = 1
+    marker: "# {mark} ANSIBLE MANAGED BLOCK"
+    backup: yes
+    # append_newline: yes
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - Reload the ip forwarding settings
+
+- name: Immediately reload the ip forwarding settings if changed
+  meta: flush_handlers
+
+- name: Modify the CGroup driver for kubelet
+  replace:
+    path: /etc/default/kubelet
+    regexp: '^KUBELET_CGROUP_ARGS=.*'
+    replace: 'KUBELET_CGROUP_ARGS="--cgroup-driver=systemd"'
+    backup: yes
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - Reload the daemons
+
+- name: Immediately reload the daemons if changed
+  meta: flush_handlers
+
+- name: Restart the kubelet service
+  service:
+    name: kubelet
+    state: restarted
+    enabled: yes
+  when:
+    - ansible_distribution == "Ubuntu"
+    - ansible_distribution_version is version('20.04', '>=')
+    - ansible_distribution_version is version('22.04', '<=')
+
+- name: Remove the containerd default config file
+  file:
+    path: /etc/containerd/config.toml
+    state: absent
+  notify:
+    - Restart containerd service
+
+- name: Immediately restart containerd service if changed
+  meta: flush_handlers

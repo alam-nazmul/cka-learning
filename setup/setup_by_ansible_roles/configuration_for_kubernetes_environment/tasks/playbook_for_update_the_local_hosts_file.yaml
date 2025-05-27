@@ -1,20 +1,19 @@
----
 - name: Update the local hosts file
   blockinfile:
     path: /etc/cloud/templates/hosts.debian.tmpl
     block: |
       {{ item.ip }} {{ item.name }}
     marker: "# {mark} ANSIBLE MANAGED BLOCK"
-    append_newline: yes
-    backup: yes
-  owner: root
-  group: root
-  mode: '0644'
+    # append_newline: yes
+    # backup: yes
+  # owner: root
+  # group: root
+  # mode: '0644'
   loop:
-    - { ip: "{{ 172.16.7.91 }}", name: "k8s-master" }
-    - { ip: "{{ 172.16.7.92 }}", name: "k8s-worker-1" }
-    - { ip: "{{ 172.16.7.93 }}", name: "k8s-worker-2" }
-    - { ip: "{{ 172.16.7.94 }}", name: "k8s-worker-3" }
+    - { ip: 172.16.7.91, name: k8s-master }
+    - { ip: 172.16.7.92, name: k8s-worker-1 }
+    - { ip: 172.16.7.93, name: k8s-worker-2 }
+    - { ip: 172.16.7.94, name: k8s-worker-3 }
   notify:
     - Restart cloud-init service
 

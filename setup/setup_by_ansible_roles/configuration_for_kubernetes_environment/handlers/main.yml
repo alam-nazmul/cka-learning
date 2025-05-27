@@ -5,6 +5,7 @@
   service:
     name: cloud-init
     state: restarted
+    enabled: yes
 
 - name: Update apt cache
   apt:
@@ -16,3 +17,18 @@
   loop:
     - br_netfilter
     - overlay
+
+- name: Reload the ip forwarding settings
+  sysctl:
+    reload: yes
+    # sysctl_file: /etc/sysctl.d/10-k8s.conf
+
+- name: Reload the daemons
+  systemd:
+    daemon_reload: yes
+
+- name: Restart containerd service
+  service:
+    name: containerd
+    state: restarted
+    enabled: yes

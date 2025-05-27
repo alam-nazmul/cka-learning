@@ -3,7 +3,5 @@
   hosts: k8s_nodes
   gather_facts: true
   roles:
-
     - role: install_container_engine
-      when: 
-        - "'k8s_nodes' in group_names"      
+    - role: configuration_for_kubernetes_environment

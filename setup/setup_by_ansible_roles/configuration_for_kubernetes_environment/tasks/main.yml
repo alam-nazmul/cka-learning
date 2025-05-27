@@ -7,5 +7,5 @@
 - name: Kubernetes cluster setup
   include_tasks: playbook_for_k8s_setup.yaml
 
-- name: Initiate the Kubernetes cluster
-  include_tasks: playbook_for_initiate_k8s.yaml
+# - name: Initiate the Kubernetes cluster
+#   include_tasks: playbook_for_initiate_k8s.yaml

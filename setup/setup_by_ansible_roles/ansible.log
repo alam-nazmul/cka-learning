@@ -4274,3 +4274,283 @@ Should be written as:
 2025-05-27 18:41:36,256 p=316796 u=nazmul n=ansiblelint.cli | Invalid configuration file /home/jarvis/github/cka-learning/.config/ansible-lint.yml. $ None is not of type 'object'. See https://ansible.readthedocs.io/projects/lint/configuring/
 2025-05-27 18:41:36,535 p=316803 u=nazmul n=ansiblelint.cli | Invalid configuration file /home/jarvis/github/cka-learning/.config/ansible-lint.yml. $ None is not of type 'object'. See https://ansible.readthedocs.io/projects/lint/configuring/
 2025-05-27 18:41:40,455 p=316904 u=nazmul n=ansiblelint.cli | Invalid configuration file /home/jarvis/github/cka-learning/.config/ansible-lint.yml. $ None is not of type 'object'. See https://ansible.readthedocs.io/projects/lint/configuring/
+2025-05-28 00:26:27,156 p=22984 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-28 00:26:27,167 p=22984 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-28 00:26:30,783 p=22984 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:26:31,151 p=22984 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:26:31,158 p=22984 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:26:31,198 p=22984 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:26:31,204 p=22984 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Update the local hosts file] ********************************************************************
+2025-05-28 00:26:31,258 p=22984 u=nirr n=ansible ERROR| ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key. while parsing a block mapping
+  in "<unicode string>", line 3, column 5
+did not find expected key
+  in "<unicode string>", line 6, column 7
+
+The error appears to be in '/home/nirr/github/cka-learning/setup/setup_by_ansible_roles/configuration_for_kubernetes_environment/tasks/playbook_for_update_the_local_hosts_file.yaml': line 6, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    # marker: "# {mark} ANSIBLE MANAGED BLOCK"
+      172.16.7.91  k8s-master-01
+      ^ here
+
+2025-05-28 00:26:54,427 p=23418 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-28 00:26:54,435 p=23418 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-28 00:26:56,871 p=23418 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:26:56,876 p=23418 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:26:56,928 p=23418 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:26:57,330 p=23418 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:26:57,336 p=23418 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Update the local hosts file] ********************************************************************
+2025-05-28 00:26:57,391 p=23418 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/configuration_for_kubernetes_environment/tasks/playbook_for_update_the_local_hosts_file.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-28 00:26:57,396 p=23418 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Update the local hosts file] ********************************************************************
+2025-05-28 00:26:58,107 p=23418 u=nirr n=ansible INFO| changed: [172.16.7.94]
+2025-05-28 00:26:58,116 p=23418 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-28 00:26:58,119 p=23418 u=nirr n=ansible INFO| changed: [172.16.7.93]
+2025-05-28 00:26:58,132 p=23418 u=nirr n=ansible INFO| changed: [172.16.7.92]
+2025-05-28 00:26:58,139 p=23418 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:26:58,144 p=23418 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:26:58,149 p=23418 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:26:58,153 p=23418 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:26:58,172 p=23418 u=nirr n=ansible INFO| RUNNING HANDLER [configuration_for_kubernetes_environment : Restart cloud-init service] **********************************************************
+2025-05-28 00:27:00,195 p=23418 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-28 00:27:00,227 p=23418 u=nirr n=ansible INFO| changed: [172.16.7.92]
+2025-05-28 00:27:00,236 p=23418 u=nirr n=ansible INFO| changed: [172.16.7.94]
+2025-05-28 00:27:00,236 p=23418 u=nirr n=ansible INFO| changed: [172.16.7.93]
+2025-05-28 00:27:00,256 p=23418 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-28 00:27:00,256 p=23418 u=nirr n=ansible INFO| 172.16.7.91                : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-28 00:27:00,256 p=23418 u=nirr n=ansible INFO| 172.16.7.92                : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-28 00:27:00,256 p=23418 u=nirr n=ansible INFO| 172.16.7.93                : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-28 00:27:00,256 p=23418 u=nirr n=ansible INFO| 172.16.7.94                : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-05-28 00:32:09,509 p=26920 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-28 00:32:09,517 p=26920 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-28 00:32:12,854 p=26920 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:32:13,035 p=26920 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:32:13,278 p=26920 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:32:13,429 p=26920 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:32:13,435 p=26920 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Update the local hosts file] ********************************************************************
+2025-05-28 00:32:13,493 p=26920 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/configuration_for_kubernetes_environment/tasks/playbook_for_update_the_local_hosts_file.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-28 00:32:13,499 p=26920 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Update the local hosts file] ********************************************************************
+2025-05-28 00:32:14,204 p=26920 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:32:14,214 p=26920 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:32:14,219 p=26920 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:32:14,242 p=26920 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:32:14,247 p=26920 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:32:14,251 p=26920 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:32:14,255 p=26920 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:32:14,259 p=26920 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:32:14,263 p=26920 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Kubernetes cluster setup] ***********************************************************************
+2025-05-28 00:32:14,326 p=26920 u=nirr n=ansible ERROR| ERROR! conflicting action statements: lineinfile, backup
+
+The error appears to be in '/home/nirr/github/cka-learning/setup/setup_by_ansible_roles/configuration_for_kubernetes_environment/tasks/playbook_for_k8s_setup.yaml': line 112, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Modify the CGroup driver for kubelet
+  ^ here
+
+2025-05-28 00:32:48,590 p=27243 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-28 00:32:48,597 p=27243 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-28 00:32:50,798 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:32:50,972 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:32:50,990 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:32:50,992 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:32:50,998 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Update the local hosts file] ********************************************************************
+2025-05-28 00:32:51,066 p=27243 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/configuration_for_kubernetes_environment/tasks/playbook_for_update_the_local_hosts_file.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-28 00:32:51,073 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Update the local hosts file] ********************************************************************
+2025-05-28 00:32:51,790 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:32:51,811 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:32:51,819 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:32:51,819 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:32:51,825 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:32:51,830 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:32:51,834 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:32:51,838 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:32:51,844 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Kubernetes cluster setup] ***********************************************************************
+2025-05-28 00:32:51,907 p=27243 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/configuration_for_kubernetes_environment/tasks/playbook_for_k8s_setup.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-28 00:32:51,920 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Add the GPG key for the Kubernetes repository] **************************************************
+2025-05-28 00:32:53,383 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:32:53,393 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:32:53,394 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:32:53,394 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:32:53,399 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Add the Kubernetes APT repository] **************************************************************
+2025-05-28 00:32:54,229 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:32:54,391 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:32:54,402 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:32:54,409 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:32:54,414 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately update apt cache if repo changed] ***************************************************
+2025-05-28 00:32:54,418 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately update apt cache if repo changed] ***************************************************
+2025-05-28 00:32:54,424 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately update apt cache if repo changed] ***************************************************
+2025-05-28 00:32:54,429 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately update apt cache if repo changed] ***************************************************
+2025-05-28 00:32:54,433 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Install Kubernetes components for master nodes] *************************************************
+2025-05-28 00:32:54,472 p=27243 u=nirr n=ansible INFO| skipping: [172.16.7.92]
+2025-05-28 00:32:54,473 p=27243 u=nirr n=ansible INFO| skipping: [172.16.7.93]
+2025-05-28 00:32:54,481 p=27243 u=nirr n=ansible INFO| skipping: [172.16.7.94]
+2025-05-28 00:33:10,113 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:33:10,118 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Install Kubernetes components for worker nodes] *************************************************
+2025-05-28 00:33:10,147 p=27243 u=nirr n=ansible INFO| skipping: [172.16.7.91]
+2025-05-28 00:33:22,806 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:33:22,846 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:33:22,873 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:33:22,879 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Disable the swap memory] ************************************************************************
+2025-05-28 00:33:23,532 p=27243 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-28 00:33:23,544 p=27243 u=nirr n=ansible INFO| changed: [172.16.7.94]
+2025-05-28 00:33:23,568 p=27243 u=nirr n=ansible INFO| changed: [172.16.7.92]
+2025-05-28 00:33:23,585 p=27243 u=nirr n=ansible INFO| changed: [172.16.7.93]
+2025-05-28 00:33:23,591 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Create required modules file] *******************************************************************
+2025-05-28 00:33:24,216 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:33:24,237 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:33:24,242 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:33:24,288 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:33:24,294 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Load the required modules] **********************************************************************
+2025-05-28 00:33:24,883 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:33:24,886 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:33:24,890 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:33:24,927 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:33:24,933 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately load the required modules if changed] ***********************************************
+2025-05-28 00:33:24,939 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately load the required modules if changed] ***********************************************
+2025-05-28 00:33:24,943 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately load the required modules if changed] ***********************************************
+2025-05-28 00:33:24,949 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately load the required modules if changed] ***********************************************
+2025-05-28 00:33:24,953 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Create the IP forwarding configuration file] ****************************************************
+2025-05-28 00:33:25,451 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:33:25,475 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:33:25,482 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:33:25,566 p=27243 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:33:25,572 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Enable the IP forwording] ***********************************************************************
+2025-05-28 00:33:26,183 p=27243 u=nirr n=ansible INFO| changed: [172.16.7.92]
+2025-05-28 00:33:26,223 p=27243 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-28 00:33:26,242 p=27243 u=nirr n=ansible INFO| changed: [172.16.7.94]
+2025-05-28 00:33:26,268 p=27243 u=nirr n=ansible INFO| changed: [172.16.7.93]
+2025-05-28 00:33:26,273 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately reload the ip forwarding settings if changed] ***************************************
+2025-05-28 00:33:26,277 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately reload the ip forwarding settings if changed] ***************************************
+2025-05-28 00:33:26,281 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately reload the ip forwarding settings if changed] ***************************************
+2025-05-28 00:33:26,285 p=27243 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately reload the ip forwarding settings if changed] ***************************************
+2025-05-28 00:33:26,290 p=27243 u=nirr n=ansible INFO| RUNNING HANDLER [configuration_for_kubernetes_environment : Reload the ip forwarding settings] ***************************************************
+2025-05-28 00:33:26,969 p=27243 u=nirr n=ansible INFO| fatal: [172.16.7.93]: FAILED! => changed=false 
+  msg: 'missing required arguments: name'
+2025-05-28 00:33:26,987 p=27243 u=nirr n=ansible INFO| fatal: [172.16.7.91]: FAILED! => changed=false 
+  msg: 'missing required arguments: name'
+2025-05-28 00:33:27,019 p=27243 u=nirr n=ansible INFO| fatal: [172.16.7.94]: FAILED! => changed=false 
+  msg: 'missing required arguments: name'
+2025-05-28 00:33:27,022 p=27243 u=nirr n=ansible INFO| fatal: [172.16.7.92]: FAILED! => changed=false 
+  msg: 'missing required arguments: name'
+2025-05-28 00:33:27,023 p=27243 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-28 00:33:27,023 p=27243 u=nirr n=ansible INFO| 172.16.7.91                : ok=12   changed=2    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2025-05-28 00:33:27,023 p=27243 u=nirr n=ansible INFO| 172.16.7.92                : ok=12   changed=2    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2025-05-28 00:33:27,023 p=27243 u=nirr n=ansible INFO| 172.16.7.93                : ok=12   changed=2    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2025-05-28 00:33:27,023 p=27243 u=nirr n=ansible INFO| 172.16.7.94                : ok=12   changed=2    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2025-05-28 00:37:26,886 p=29503 u=nirr n=ansible INFO| PLAY [Setup the k8s locally] *********************************************************************************************************************
+2025-05-28 00:37:26,894 p=29503 u=nirr n=ansible INFO| TASK [Gathering Facts] ***************************************************************************************************************************
+2025-05-28 00:37:29,894 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:37:30,027 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:37:31,058 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:37:31,138 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:37:31,144 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Update the local hosts file] ********************************************************************
+2025-05-28 00:37:31,200 p=29503 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/configuration_for_kubernetes_environment/tasks/playbook_for_update_the_local_hosts_file.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-28 00:37:31,205 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Update the local hosts file] ********************************************************************
+2025-05-28 00:37:31,876 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:37:31,884 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:37:31,891 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:37:31,921 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:37:31,927 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:37:31,931 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:37:31,935 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:37:31,939 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart cloud init file if hosts entry changed] *************************************
+2025-05-28 00:37:31,943 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Kubernetes cluster setup] ***********************************************************************
+2025-05-28 00:37:32,006 p=29503 u=nirr n=ansible INFO| included: /home/nirr/github/cka-learning/setup/setup_by_ansible_roles/configuration_for_kubernetes_environment/tasks/playbook_for_k8s_setup.yaml for 172.16.7.91, 172.16.7.92, 172.16.7.93, 172.16.7.94
+2025-05-28 00:37:32,015 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Add the GPG key for the Kubernetes repository] **************************************************
+2025-05-28 00:37:33,238 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:37:33,243 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:37:33,345 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:37:33,381 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:37:33,387 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Add the Kubernetes APT repository] **************************************************************
+2025-05-28 00:37:34,224 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:37:34,353 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:37:34,657 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:37:34,660 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:37:34,666 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately update apt cache if repo changed] ***************************************************
+2025-05-28 00:37:34,673 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately update apt cache if repo changed] ***************************************************
+2025-05-28 00:37:34,677 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately update apt cache if repo changed] ***************************************************
+2025-05-28 00:37:34,681 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately update apt cache if repo changed] ***************************************************
+2025-05-28 00:37:34,686 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Install Kubernetes components for master nodes] *************************************************
+2025-05-28 00:37:34,722 p=29503 u=nirr n=ansible INFO| skipping: [172.16.7.92]
+2025-05-28 00:37:34,726 p=29503 u=nirr n=ansible INFO| skipping: [172.16.7.93]
+2025-05-28 00:37:34,746 p=29503 u=nirr n=ansible INFO| skipping: [172.16.7.94]
+2025-05-28 00:37:45,114 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:37:45,120 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Install Kubernetes components for worker nodes] *************************************************
+2025-05-28 00:37:45,151 p=29503 u=nirr n=ansible INFO| skipping: [172.16.7.91]
+2025-05-28 00:37:49,797 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:37:49,810 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:37:53,490 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:37:53,498 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Disable the swap memory] ************************************************************************
+2025-05-28 00:37:53,932 p=29503 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-28 00:37:54,211 p=29503 u=nirr n=ansible INFO| changed: [172.16.7.92]
+2025-05-28 00:37:54,242 p=29503 u=nirr n=ansible INFO| changed: [172.16.7.93]
+2025-05-28 00:37:54,272 p=29503 u=nirr n=ansible INFO| changed: [172.16.7.94]
+2025-05-28 00:37:54,278 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Create required modules file] *******************************************************************
+2025-05-28 00:37:54,866 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:37:54,876 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:37:54,878 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:37:54,882 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:37:54,887 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Load the required modules] **********************************************************************
+2025-05-28 00:37:55,175 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:37:55,199 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:37:55,206 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:37:55,226 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:37:55,233 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately load the required modules if changed] ***********************************************
+2025-05-28 00:37:55,237 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately load the required modules if changed] ***********************************************
+2025-05-28 00:37:55,243 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately load the required modules if changed] ***********************************************
+2025-05-28 00:37:55,247 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately load the required modules if changed] ***********************************************
+2025-05-28 00:37:55,253 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Create the IP forwarding configuration file] ****************************************************
+2025-05-28 00:37:55,833 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:37:55,842 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:37:55,851 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:37:55,868 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:37:55,874 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Enable the IP forwording] ***********************************************************************
+2025-05-28 00:37:56,161 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:37:56,171 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:37:56,196 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:37:56,204 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:37:56,209 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately reload the ip forwarding settings if changed] ***************************************
+2025-05-28 00:37:56,216 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately reload the ip forwarding settings if changed] ***************************************
+2025-05-28 00:37:56,220 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately reload the ip forwarding settings if changed] ***************************************
+2025-05-28 00:37:56,226 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately reload the ip forwarding settings if changed] ***************************************
+2025-05-28 00:37:56,231 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Modify the CGroup driver for kubelet] ***********************************************************
+2025-05-28 00:37:56,884 p=29503 u=nirr n=ansible INFO| changed: [172.16.7.93]
+2025-05-28 00:37:56,890 p=29503 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-28 00:37:56,951 p=29503 u=nirr n=ansible INFO| changed: [172.16.7.94]
+2025-05-28 00:37:56,971 p=29503 u=nirr n=ansible INFO| changed: [172.16.7.92]
+2025-05-28 00:37:56,977 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately reload the daemons if changed] ******************************************************
+2025-05-28 00:37:56,984 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately reload the daemons if changed] ******************************************************
+2025-05-28 00:37:56,988 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately reload the daemons if changed] ******************************************************
+2025-05-28 00:37:56,993 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately reload the daemons if changed] ******************************************************
+2025-05-28 00:37:56,998 p=29503 u=nirr n=ansible INFO| RUNNING HANDLER [configuration_for_kubernetes_environment : Reload the daemons] ******************************************************************
+2025-05-28 00:37:58,174 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:37:58,525 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:37:58,543 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:37:58,704 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:37:58,713 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Restart the kubelet service] ********************************************************************
+2025-05-28 00:37:59,599 p=29503 u=nirr n=ansible INFO| changed: [172.16.7.93]
+2025-05-28 00:37:59,604 p=29503 u=nirr n=ansible INFO| changed: [172.16.7.92]
+2025-05-28 00:37:59,637 p=29503 u=nirr n=ansible INFO| changed: [172.16.7.94]
+2025-05-28 00:37:59,731 p=29503 u=nirr n=ansible INFO| changed: [172.16.7.91]
+2025-05-28 00:37:59,736 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Remove the containerd default config file] ******************************************************
+2025-05-28 00:38:00,299 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.92]
+2025-05-28 00:38:00,341 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.91]
+2025-05-28 00:38:00,347 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.94]
+2025-05-28 00:38:00,347 p=29503 u=nirr n=ansible INFO| ok: [172.16.7.93]
+2025-05-28 00:38:00,355 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart containerd service if changed] **********************************************
+2025-05-28 00:38:00,360 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart containerd service if changed] **********************************************
+2025-05-28 00:38:00,366 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart containerd service if changed] **********************************************
+2025-05-28 00:38:00,370 p=29503 u=nirr n=ansible INFO| TASK [configuration_for_kubernetes_environment : Immediately restart containerd service if changed] **********************************************
+2025-05-28 00:38:00,391 p=29503 u=nirr n=ansible INFO| PLAY RECAP ***************************************************************************************************************************************
+2025-05-28 00:38:00,391 p=29503 u=nirr n=ansible INFO| 172.16.7.91                : ok=16   changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2025-05-28 00:38:00,391 p=29503 u=nirr n=ansible INFO| 172.16.7.92                : ok=16   changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2025-05-28 00:38:00,391 p=29503 u=nirr n=ansible INFO| 172.16.7.93                : ok=16   changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2025-05-28 00:38:00,391 p=29503 u=nirr n=ansible INFO| 172.16.7.94                : ok=16   changed=3    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   

@@ -1,0 +1,32 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-web
+  labels:
+    service_name: web-nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.14.2
+      ports:
+        - containerPort: 80
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cluster-ip-for-web
+  labels:
+    service: clusterIP
+spec:
+  clusterIP: 10.96.0.20
+  ports:
+    - name: web
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    service_name: web-nginx
+  type: ClusterIP

@@ -1,0 +1,40 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-service-deployment-2
+  labels:
+    name: ha-web-service
+    tier: backend
+spec:
+  template:
+    metadata:
+      name: ha-web-service
+      labels:
+        app: webapp
+        tier: backend
+    spec:
+      containers:
+        - name: web-container
+          imagePullPolicy: IfNotPresent
+          image: nginx:alpine
+  replicas: 5
+  selector:
+    matchLabels:
+      app: webapp
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service2
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30030
+      name: web-port
+  selector:
+    tier: backend

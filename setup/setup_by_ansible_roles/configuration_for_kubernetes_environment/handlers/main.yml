@@ -5,6 +5,7 @@
   service:
     name: cloud-init
     state: restarted
+    enabled: yes
 
 - name: Update apt cache
   apt:
@@ -16,3 +17,30 @@
   loop:
     - br_netfilter
     - overlay
+
+- name: Reload the ip forwarding settings
+  sysctl:
+    name: net.ipv4.ip_forward
+    value: 1
+    state: present
+    reload: yes
+
+- name: Reload the daemons
+  systemd:
+    daemon_reload: yes
+
+- name: Restart containerd service
+  service:
+    name: containerd
+    state: restarted
+    enabled: yes
+
+- name: Source bashrc file for kubectl
+  shell: source /etc/bash.bashrc
+  args:
+    executable: /bin/bash
+
+- name: Source kubectl completion script
+  shell: source /etc/bash_completion.d/kubectl
+  args:
+    executable: /bin/bash

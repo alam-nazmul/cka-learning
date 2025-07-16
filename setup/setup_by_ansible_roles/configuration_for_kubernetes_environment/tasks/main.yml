@@ -1,3 +1,14 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # tasks file for configuration_for_kubernetes_environment
+- name: Install dependency packages
+  include_tasks: playbook_for_dependency_packages.yaml
+
+- name: Update the local hosts file
+  include_tasks: playbook_for_update_the_local_hosts_file.yaml
+
+- name: Kubernetes cluster setup
+  include_tasks: playbook_for_k8s_setup.yaml
+
+- name: Initiate the Kubernetes cluster
+  include_tasks: playbook_for_initiate_k8s.yaml

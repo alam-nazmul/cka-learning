@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicaset
+  labels:
+    issue: replicaset
+spec:
+  template:
+    metadata:
+      name: my-replicaset-app
+      labels:
+        app: web-5
+        type: front-end
+    spec:
+      containers:
+        - name: web-5-container
+          image: nginx
+          imagePullPolicy: IfNotPresent
+        - name: os-container
+          image: ubuntu
+          imagePullPolicy: IfNotPresent
+          command: ["sleep", "51000"]
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-5

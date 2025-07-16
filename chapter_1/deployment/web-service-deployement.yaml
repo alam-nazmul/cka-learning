@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-service-deployment
+  labels:
+    name: ha-web-service
+    tier: backend
+spec:
+  template:
+    metadata:
+      name: ha-web-service
+      labels:
+        app: webapp
+        tier: backend
+    spec:
+      containers:
+        - name: web-container
+          imagePullPolicy: IfNotPresent
+          image: nginx:alpine
+  replicas: 5
+  selector:
+    matchLabels:
+      app: webapp

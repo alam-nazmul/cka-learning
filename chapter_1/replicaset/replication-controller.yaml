@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: replication-controller
+  labels:
+    issue: replication-controller
+spec:
+  template:
+    metadata:
+      name: my-replication-controller-app
+      labels:
+        app: web-3
+        type: backend
+    spec:
+      containers:
+        - name: web-3-container
+          image: nginx
+          imagePullPolicy: IfNotPresent
+  replicas: 3

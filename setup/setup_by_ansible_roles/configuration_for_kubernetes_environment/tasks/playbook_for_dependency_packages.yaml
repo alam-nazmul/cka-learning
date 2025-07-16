@@ -1,0 +1,26 @@
+- name: Update the current packages
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Install required packages
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - python3-pip
+    state: present
+
+- name: Install Python packages
+  pip:
+    name:
+      - ansible
+      - kubernetes
+      - openshift
+    state: present
+  when:
+    - ansible_distribution == "Ubuntu"
+    - ansible_distribution_version is version('20.04', '>=')
+    - ansible_distribution_version is version('22.04', '<=')
+    - "'k8s_masters' in group_names"

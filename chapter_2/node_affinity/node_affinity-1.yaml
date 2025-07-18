@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-123
+  labels:
+    web: nodeAff1
+spec:
+  containers:
+    - name: web-container123
+      imagePullPolicy: IfNotPresent
+      image: nginx
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: color
+                operator: In
+                values:
+                  - blue
+                  - green

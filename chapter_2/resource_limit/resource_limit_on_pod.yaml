@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-with-resource-limit
+  labels:
+    color: blue
+spec:
+  containers:
+    - name: web-conrtainer-786
+      image: nginx
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 80
+      resources:
+        requests:
+          cpu: "2"
+          memory: "1Gi"
+        limits:
+          cpu: "3"
+          memory: "2Gi"

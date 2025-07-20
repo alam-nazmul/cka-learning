@@ -1,0 +1,24 @@
+---
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: high-priority
+value: 1000000000
+description: "Priority class mission for critical pods"
+
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-contaiener
+  labels:
+    web: nginx
+spec:
+  containers:
+    - name: nginx-container
+      imagePullPolicy: IfNotPresent
+      image: nginx
+      ports:
+        - containerPort: 80
+  priorityClassName: high-priority

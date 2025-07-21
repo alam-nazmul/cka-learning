@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu-sleeper
+  labels:
+    service: ubuntu
+spec:
+  containers:
+    - name: ubuntu-sleeper-container
+      image: ubuntu
+      imagePullPolicy: IfNotPresent
+      args: ["100"]

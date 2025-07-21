@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: monitoring-daemon
+  labels:
+    daemon: monitoring
+spec:
+  selector:
+    matchLabels:
+      logs: monitor
+  template:
+    metadata:
+      labels:
+        logs: monitor
+    spec:
+      containers:
+        - name: monitoring-agent
+          imagePullPolicy: IfNotPresent
+          image: registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.16.0

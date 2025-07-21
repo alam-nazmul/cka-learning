@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: colocated-pod
+  labels:
+    app: colocated-example
+spec:
+  containers:
+    - name: web-server
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+    - name: log-watcher
+      image: busybox
+      command: ["sh", "-c", "tail -n+1 -f /var/log/nginx/access.log"]

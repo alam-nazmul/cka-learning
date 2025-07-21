@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-sidecar-pod
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+      imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 80
+
+    - name: sidecar-container
+      image: busybox
+      command: ["/bin/sh", "-c"]
+      args:
+        - while true; do
+          echo "Sidecar logging $(date)" >> /var/log/html-log/index.html;
+          sleep 5;
+          done;

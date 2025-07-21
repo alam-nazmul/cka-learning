@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod-with-init
+  labels:
+    app: myapp
+spec:
+  initContainers:
+    - name: init-myservice-1
+      image: busybox
+      imagePullPolicy: IfNotPresent
+      command: ['sh', '-c', 'echo "Init container 1: Waiting for 5s"; sleep 5']
+    - name: init-myservice-2
+      image: busybox
+      imagePullPolicy: IfNotPresent
+      command: ['sh', '-c', 'echo "Init container 2: Preparing config"; sleep 3']
+  restartPolicy: Always
+  containers:
+    - name: main-app
+      image: nginx
+      ports:
+        - containerPort: 80
+      imagePullPolicy: IfNotPresent

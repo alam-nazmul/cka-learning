@@ -1,0 +1,29 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-color
+  labels:
+    app: color
+data:
+  APP_COLOR: blue
+  APP_MODE: prod
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: color-web
+  labels:
+    web-color: blue
+spec:
+  restartPolicy: Always
+  containers:
+    - name: web-color-app
+      imagePullPolicy: IfNotPresent
+      image: nginx
+      ports:
+        - containerPort: 80
+      envFrom:
+        - configMapRef:
+            name: app-color

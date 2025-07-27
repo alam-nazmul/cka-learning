@@ -1,0 +1,16 @@
+---
+apiVersion: "v1"
+kind: "PersistentVolume"
+metadata:
+  labels:
+    pv: "test-pv"
+  name: "pv-vol1"
+spec:
+  accessModes:
+  - "ReadWriteMany"
+  capacity:
+    storage: 200Mi
+  persistentVolumeReclaimPolicy: "Delete"
+  nfs:
+    path: "/k8s/data/pv-vol1"
+    server: "172.16.7.99"

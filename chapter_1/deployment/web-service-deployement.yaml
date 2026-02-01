@@ -17,7 +17,7 @@ spec:
         - name: web-container
           imagePullPolicy: IfNotPresent
           image: nginx:alpine
-  replicas: 3
+  replicas: 7
   selector:
     matchLabels:
       app: webapp

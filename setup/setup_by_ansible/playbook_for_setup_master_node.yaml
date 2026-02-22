@@ -6,59 +6,62 @@
 
     - name: Update the '/etc/hosts' file
       ansible.builtin.copy:
-        src: ./data_files/hosts
+        src: ./data_files/local_hosts
         dest: /etc/hosts
         owner: 'root'
         group: 'root'
-        mode: '0755'
+        mode: '0644'
 
     - name: Create "/etc/apt/keyrings" directory exists
       file:
         path: /etc/apt/keyrings
         state: directory
         mode: '0755'
-
-    - name: Download Kubernetes APT key
-      get_url:
-        url: https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key
-        dest: /tmp/kubernetes-release.key
-        mode: '0644'
-
-    - name: Convert APT key to GPG format
-      command: gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg /tmp/kubernetes-release.key
-
-    - name: Clean up temporary key file
-      file:
-        path: /tmp/kubernetes-release.key
-        state: absent
-
-
-    - name: Add Kubernetes APT repository
-      ansible.builtin.copy:
-        content: "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /"
-        dest: /etc/apt/sources.list.d/kubernetes.list
         owner: "root"
         group: "root"
+
+    - name: Download Kubernetes APT key
+      apt_key:
+        url: "https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key"
+        keyring: "/etc/apt/keyrings/kubernetes-apt-keyring.gpg"
+        state: present
+        # mode: "0644"
+        # owner: "root"
+        # group: "root"
+
+    - name: Update the source files
+      copy:
+        src: ./data_files/kubernetes.list
+        dest: /etc/apt/sources.list.d/kubernetes.list
         mode: "0644"
+        owner: "root"
+        group: "root"
 
 
-    - name: Update the APT cache
+    - name: Update all packages to their latest version
       apt:
-        update_cache: yes
-        cache_valid_time: 3600
+        name: "*"
+        state: latest
 
-    - name: Install required packages for k8s cluster.
-      ansible.builtin.apt:
+    - name: Install the Kubernetes packages for master node
+      apt:
         name:
           - kubeadm
           - kubelet
           - kubectl
         state: present
+    
+    - name: Remove swap entry from /etc/fstab
+      mount:
+        name: swap
+        fstype: swap
+        state: absent
 
-    - name: Disable SWAP
-      command: swapoff -a
+    - name: Load the required modules
+      copy:
+        src: ./data_files/k8s.conf
+        dest: /etc/modules-load.d/k8s.conf
+        mode: "0644"
+        owner: "root"
+        group: "root"
 
-    - name: Ensure swap is disabled on boot
-      replace:
-        path: /etc/fstab
-        re

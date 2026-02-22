@@ -1,4 +1,5 @@
 [k8s-masters]
+172.16.7.210
 
 [k8s-workers]
 

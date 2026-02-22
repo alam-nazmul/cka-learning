@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ee80d8dc-be80-47b3-a006-f9c247dc4ada" name="Changes" comment="volume mount for html for deployment">
+      <change afterPath="$PROJECT_DIR$/../chapter_3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter_3/.idea/chapter_3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter_3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter_3/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter_3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/chapter_4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../setup/.idea/setup.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;configuredContexts&quot;: [
+    {
+      &quot;name&quot;: &quot;kubernetes-admin@kubernetes&quot;,
+      &quot;kubeConfigUrl&quot;: &quot;file:///home/nirr/.kube/config&quot;,
+      &quot;originalNamespace&quot;: &quot;default&quot;
+    }
+  ],
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="30TBw5JGwx5Bq5FiV5hFcgbGKcj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "again",
+    "go.import.settings.migrated": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/nirr/github/cka-learning/chapter_3",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-IU-252.23892.409" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ee80d8dc-be80-47b3-a006-f9c247dc4ada" name="Changes" comment="" />
+      <created>1753641917469</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753641917469</updated>
+      <workItem from="1753641918580" duration="7630000" />
+      <workItem from="1753668069652" duration="1266000" />
+      <workItem from="1753759422402" duration="1553000" />
+      <workItem from="1753908317541" duration="38000" />
+      <workItem from="1753908378451" duration="63000" />
+      <workItem from="1754163506075" duration="60000" />
+      <workItem from="1754163630803" duration="98000" />
+      <workItem from="1754163766825" duration="72000" />
+      <workItem from="1754163855032" duration="544000" />
+      <workItem from="1754335306978" duration="1444000" />
+      <workItem from="1754339054642" duration="31000" />
+      <workItem from="1754513329182" duration="10000" />
+      <workItem from="1754638385902" duration="1983000" />
+      <workItem from="1754640915676" duration="651000" />
+      <workItem from="1754641580965" duration="233000" />
+      <workItem from="1754641843770" duration="158000" />
+      <workItem from="1754642014358" duration="255000" />
+      <workItem from="1754642288448" duration="14000" />
+      <workItem from="1754643725668" duration="973000" />
+      <workItem from="1754774890161" duration="14000" />
+      <workItem from="1754774909889" duration="14000" />
+    </task>
+    <task id="LOCAL-00001" summary="pod with pvc">
+      <option name="closed" value="true" />
+      <created>1753649550582</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1753649550582</updated>
+    </task>
+    <task id="LOCAL-00002" summary="pod with pvc html">
+      <option name="closed" value="true" />
+      <created>1753649560750</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1753649560750</updated>
+    </task>
+    <task id="LOCAL-00003" summary="volume mount for html">
+      <option name="closed" value="true" />
+      <created>1753649583944</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1753649583944</updated>
+    </task>
+    <task id="LOCAL-00004" summary="volume mount for html for deployment">
+      <option name="closed" value="true" />
+      <created>1753649601763</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1753649601763</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="pod with pvc" />
+    <MESSAGE value="pod with pvc html" />
+    <MESSAGE value="volume mount for html" />
+    <MESSAGE value="volume mount for html for deployment" />
+    <option name="LAST_COMMIT_MESSAGE" value="volume mount for html for deployment" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

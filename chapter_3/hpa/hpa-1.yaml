@@ -50,26 +50,28 @@ spec:
          name: cpu
          target:
            type: Utilization
-           averageUtilization: 10
+           averageUtilization: 75
      - type: Resource
        resource:
          name: memory
          target:
            type: Utilization
-           averageUtilization: 10
+           averageUtilization: 75
    behavior:
      scaleUp:
-       stabilizationWindowSeconds: 15
-       policies:
-         - periodSeconds: 15
-           type: Percent
-           value: 100
+      tolerance: "0.01"
+#       stabilizationWindowSeconds: 15
+#       policies:
+#         - periodSeconds: 15
+#           type: Percent
+#           value: 100
      scaleDown:
-       stabilizationWindowSeconds: 30
-       policies:
-         - periodSeconds: 15
-           type: Percent
-           value: 100
+       tolerance: "0.05"
+#       stabilizationWindowSeconds: 30
+#       policies:
+#         - periodSeconds: 15
+#           type: Percent
+#           value: 100
 
 ---
 apiVersion: v1

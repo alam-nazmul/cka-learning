@@ -38,10 +38,9 @@
         group: "root"
 
 
-    - name: Update all packages to their latest version
+    - name: Update with latest repo
       apt:
-        name: "*"
-        state: latest
+        update_cache: yes
 
     - name: Install the Kubernetes packages for master node
       apt:

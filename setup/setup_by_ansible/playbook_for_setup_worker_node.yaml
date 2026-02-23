@@ -1,0 +1,98 @@
+---
+- name: Setup the k8s master node for cluster.
+  hosts: k8s-workers
+  gather_facts: true
+  tasks:
+
+    - name: Update the '/etc/hosts' file
+      ansible.builtin.copy:
+        src: ./data_files/local_hosts
+        dest: /etc/hosts
+        owner: 'root'
+        group: 'root'
+        mode: '0644'
+
+    - name: Create "/etc/apt/keyrings" directory exists
+      file:
+        path: /etc/apt/keyrings
+        state: directory
+        mode: '0755'
+        owner: "root"
+        group: "root"
+
+    - name: Download Kubernetes APT key
+      apt_key:
+        url: "https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key"
+        keyring: "/etc/apt/keyrings/kubernetes-apt-keyring.gpg"
+        state: present
+        # mode: "0644"
+        # owner: "root"
+        # group: "root"
+
+    - name: Update the source files
+      copy:
+        src: ./data_files/kubernetes.list
+        dest: /etc/apt/sources.list.d/kubernetes.list
+        mode: "0644"
+        owner: "root"
+        group: "root"
+
+
+    - name: Update all packages to their latest version
+      apt:
+        update_cache: yes
+
+    - name: Install the Kubernetes packages for worker node
+      apt:
+        name:
+          - kubeadm
+          - kubelet
+        state: present
+    
+    - name: Remove swap entry from /etc/fstab
+      mount:
+        name: swap
+        fstype: swap
+        state: absent
+
+    - name: Load the required modules
+      copy:
+        src: ./data_files/k8s.conf
+        dest: /etc/modules-load.d/k8s.conf
+        mode: "0644"
+        owner: "root"
+        group: "root"
+
+
+    - name: Enable the IP forwarding
+      copy:
+        src: ./data_files/10-k8s.conf
+        dest: /etc/sysctl.d/10-k8s.conf
+        owner: "root"
+        group: "root"
+        mode: "0644"
+
+
+    - name: Update the cgroup driver
+      copy:
+        content: |
+          KUBELET_EXTRA_ARGS="--cgroup-driver=cgroupfs"
+        dest: /etc/default/kubelet
+
+
+    - name: Reload the daemons
+      ansible.builtin.systemd:
+        daemon_reload: yes
+        name: kubelet
+        state: restarted
+
+    - name: Remove the container's config.toml file
+      file:
+        path: /etc/containerd/config.toml
+        state: absent
+
+    - name: Enable and Restart the containerd service
+      service:
+        name: containerd
+        state: restarted
+        enabled: yes

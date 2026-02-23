@@ -2,7 +2,7 @@
 172.16.7.210
 
 [k8s-workers]
-
+172.16.7.211
 
 [k8s-cluster:children]
 k8s-masters

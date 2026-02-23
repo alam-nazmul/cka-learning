@@ -38,7 +38,7 @@
         group: "root"
 
 
-    - name: Update with latest repo
+    - name: Update all packages to their latest version
       apt:
         update_cache: yes
 
@@ -64,3 +64,78 @@
         owner: "root"
         group: "root"
 
+
+    - name: Enable the IP forwarding
+      copy:
+        src: ./data_files/10-k8s.conf
+        dest: /etc/sysctl.d/10-k8s.conf
+        owner: "root"
+        group: "root"
+        mode: "0644"
+
+
+    - name: Update the cgroup driver
+      copy:
+        content: |
+          KUBELET_EXTRA_ARGS="--cgroup-driver=cgroupfs"
+        dest: /etc/default/kubelet
+
+
+    - name: Reload the daemons
+      ansible.builtin.systemd:
+        daemon_reload: yes
+        name: kubelet
+        state: restarted
+
+    - name: Remove the container's config.toml file
+      file:
+        path: /etc/containerd/config.toml
+        state: absent
+
+    - name: Enable and Restart the containerd service
+      service:
+        name: containerd
+        state: restarted
+        enabled: yes
+
+    - name: Check if Kubernetes is already initialized
+      ansible.builtin.stat:
+        path: /etc/kubernetes/admin.conf
+      register: kubeadm_init_status
+
+    - name: Initialize the kubeadm by using pod cidr
+      command: >
+        kubeadm init --pod-network-cidr=10.244.0.0/16
+      when: not kubeadm_init_status.stat.exists
+
+    - name: Create .kube directory for root
+      ansible.builtin.file:
+        path: /root/.kube
+        state: directory
+        mode: '0700'
+        owner: root
+        group: root
+
+    - name: Copy admin.conf to root kube config
+      ansible.builtin.copy:
+        src: /etc/kubernetes/admin.conf
+        dest: /root/.kube/config
+        remote_src: yes
+        mode: '0600'
+        owner: root
+        group: root
+
+
+    - name: Copy the plugin files
+      copy:
+        src: ./plugins
+        dest: /tmp
+        mode: "0644"
+
+    - name: Apply CNI manifests
+      command: >
+        kubectl create -f "{{ item }}"
+      loop:
+        - /tmp/plugins/setup_flannel.yaml
+        - /tmp/plugins/tigera-operator.yaml
+        - /tmp/plugins/calico-custom-resources.yaml

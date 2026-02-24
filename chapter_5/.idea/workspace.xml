@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a2cf3049-18aa-42fd-aef3-5a515b915d47" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../chapter_1/.idea/chapter_1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter_3/.idea/chapter_3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter_4/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter_4/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter_4/.idea/chapter_4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter_4/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter_4/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../chapter_4/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deployment_with_local_registry/deployment_with secrets.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deployment_with_local_registry/local_registry_secrets.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deployments_with_variables/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deployments_with_variables/services.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deployments_with_variables/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chapter_2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../chapter_2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../chapter_4/deployment_with_pvc-html.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../chapter_4/deployment_with_pvc-html.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;configuredContexts&quot;: [
+    {
+      &quot;name&quot;: &quot;minikube&quot;,
+      &quot;kubeConfigUrl&quot;: &quot;file:///home/jarvis/.kube/config&quot;,
+      &quot;originalNamespace&quot;: &quot;default&quot;
+    },
+    {
+      &quot;name&quot;: &quot;nazmul@kubernetes&quot;,
+      &quot;kubeConfigUrl&quot;: &quot;file:///home/jarvis/.kube/config&quot;,
+      &quot;originalNamespace&quot;: &quot;default&quot;
+    },
+    {
+      &quot;name&quot;: &quot;minikube&quot;,
+      &quot;kubeConfigUrl&quot;: &quot;file:///home/jarvis/.kube/config.ori&quot;,
+      &quot;originalNamespace&quot;: &quot;awx&quot;
+    }
+  ],
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="30luP0MFxCQrFjLPPCDmEYvH1lR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "git-widget-placeholder": "again",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "/home/jarvis/celloscope_gitlab/ib-staging-qa/qa_services_by_k8s",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/deployments_with_variables" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.27812.49" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.27812.49" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a2cf3049-18aa-42fd-aef3-5a515b915d47" name="Changes" comment="" />
+      <created>1754214452746</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1754214452746</updated>
+      <workItem from="1754214454187" duration="1782000" />
+      <workItem from="1754223041640" duration="270000" />
+      <workItem from="1754223341546" duration="144000" />
+      <workItem from="1754224452704" duration="67000" />
+      <workItem from="1754288823457" duration="109000" />
+      <workItem from="1754288947183" duration="1233000" />
+      <workItem from="1754292428856" duration="3646000" />
+      <workItem from="1754303810573" duration="1427000" />
+      <workItem from="1754306724434" duration="9000" />
+      <workItem from="1754308376710" duration="76000" />
+      <workItem from="1754546651085" duration="224000" />
+      <workItem from="1754546891986" duration="362000" />
+      <workItem from="1754561089997" duration="2267000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>

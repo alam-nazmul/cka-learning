@@ -62,7 +62,7 @@ metadata:
   labels:
     web: nginx_new_deployment
 spec:
-  replicas: 5
+  replicas: 9
   selector:
     matchLabels:
       app: nginx_deployment

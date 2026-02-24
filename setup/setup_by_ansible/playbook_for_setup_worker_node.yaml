@@ -22,7 +22,7 @@
 
     - name: Download Kubernetes APT key
       apt_key:
-        url: "https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key"
+        url: "https://pkgs.k8s.io/core:/stable:/v1.34/deb/Release.key"
         keyring: "/etc/apt/keyrings/kubernetes-apt-keyring.gpg"
         state: present
         # mode: "0644"
